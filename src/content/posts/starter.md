@@ -2,7 +2,7 @@
 title: 开始
 published: 2024-09-28
 description: 你好哇，我是zzw4257, 在某三本读书, 往深处逛前先来了解下这个网站吧~本博客主要存放一些综合性的内容，学术性内容请上拐"blog"，资源站则存放在 "resource" 中...更多内容请各位自己探索啦。
-image: ./甘诗意女孩.jpg
+image: ./诗意女孩.jpg
 tags: [note,links]
 category: Unconcerned
 draft: false

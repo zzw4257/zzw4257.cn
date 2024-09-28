@@ -35,6 +35,12 @@ export const siteConfig: SiteConfig = {
 
 export const navBarConfig: NavBarConfig = {
   links: [
+    {
+      name: '博客',
+      url: 'https://blog.zzw4257.cn',     // Internal links should not include the base path, as it is automatically added
+      external: true,   
+    }
+    ,
     LinkPreset.Home,
     LinkPreset.Archive,
     LinkPreset.About,

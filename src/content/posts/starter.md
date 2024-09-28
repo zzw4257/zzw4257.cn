@@ -18,6 +18,6 @@ draft: false
 
 目前可以访问的地方：
 
- [blog](blog.zzw4257.cn)
+ [blog](https://blog.zzw4257.cn)
 
 [notion](https://zzw4257.notion.site/10edec152e1d809bbf72d55fd068fbb8)

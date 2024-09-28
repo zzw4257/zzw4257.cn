@@ -42,7 +42,14 @@ export const navBarConfig: NavBarConfig = {
       name: 'GitHub',
       url: 'https://github.com/zzw4257/zzw4257.cn',     // Internal links should not include the base path, as it is automatically added
       external: true,                               // Show an external link icon and will open in a new tab
-    },
+    }
+    ,
+    {
+      name: 'oldblog',
+      url: 'https://oldblog.zzw4257.cn',     // Internal links should not include the base path, as it is automatically added
+      external: true,                               // Show an external link icon and will open in a new tab
+    }
+    ,
   ],
 }
 

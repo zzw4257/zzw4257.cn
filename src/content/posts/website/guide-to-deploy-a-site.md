@@ -345,7 +345,7 @@ Name:	zzw4257.cn
 Address: 104.21.39.114
 ```
 
-
+但是，这引发了另一个矛盾，我的网站实际上是基于githubpages搭建的，为何却能通过nslookup到其A记录呢。实际上是，这是cloudflare的CDN加速功能的"锅"。
 
 ### nslookup
 

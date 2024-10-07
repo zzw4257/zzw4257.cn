@@ -25,6 +25,8 @@ yhgg的[blog](https://blog.cast1e.top/)
 
 伟大的jp学长的[blog](https://note.jiepeng.tech/)
 
+帅气的qsuu的[blog](https://brucejqs.github.io/MyNotebook/)
+
 一个计科大佬(修)的[blog](https://note.isshikih.top/)
 
 混合一个学长做的[混合门户](https://zju-mix.github.io/ourMIX/)

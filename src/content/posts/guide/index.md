@@ -1,6 +1,6 @@
 ---
 title: Fuwari 实用向指南
-published: 2025-09-28
+published: 2015-09-28
 description: 大概是给我自己看的一些东西：关于这个网站采用的架构
 image: "./cover.jpeg"
 tags: [note,links]

@@ -48,10 +48,10 @@ keywords:`递推`，`向量表示`
 
 :::
 
-具体过程如下(密码作业截止后就撤掉)：
+具体过程如下：
 
 <iframe
-  src="/pdfjs-4.6.82-dist/web/viewer.html?file=/file/HW1(final).pdf"
+  src="/pdfjs-4.6.82-dist/web/viewer.html?file=/file/HW1(unlock).pdf"
   width="100%"
   height="800px"
 ></iframe>

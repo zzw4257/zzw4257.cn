@@ -229,3 +229,61 @@ $$
 
 :::
 
+## Chap. 28 Electric Potential U & V
+
+### 28.6 Calculate E from Potential
+
+$$
+V_P=\int _{P}^{\infty }\vec E\cdot \mathrm d \vec l
+$$
+
+- Graphically the E-field line is the fastest-descending line of equipotential surfaces
+
+- Math:
+
+  从$\mathrm d W=-q_0 \mathrm d V$出发
+  $$
+  \mathrm d W=\vec F\cdot \mathrm d\vec l=q_0\vec F\cdot \mathrm d \vec l=q_0E\mathrm d l\cos \theta\\E\cos \theta =-\frac{\mathrm d V}{\mathrm dl}
+  $$
+
+  $$
+  E_l=-\frac{\mathrm d V}{\mathrm d l}\Rightarrow \vec E=-\nabla V
+  $$
+
+  
+
+  - Cartesian coordinates:
+    $$
+    \nabla V=\frac{\partial V}{\partial x}\bar x+\frac{\partial V}{\partial y}\bar y+\frac{\partial V}{\partial z}\bar z
+    $$
+
+  - Spherical coordinates:
+    $$
+    \nabla V=\frac{\partial V}{\partial r}\bar x+\frac{1}{r}\frac{\partial V}{\partial \theta}\bar y+\frac{1}{r\sin \varphi}\frac{\partial V}{\partial \varphi}\bar \varphi
+    $$
+    :::note[回顾]
+
+    ![Spherical coordinates](https://en.wikipedia.org/wiki/File:3D_Spherical.svg)
+    $$
+    \begin{align*}
+    x & = r \sin \theta \cos \phi \\
+    y & = r \sin \theta \sin \phi \\
+    z & = r \cos \theta
+    \end{align*}
+    $$
+
+    $$
+    r=\sqrt{x^2+y^2+z^2}\\\theta=\arccos\frac z{\sqrt{x^2+y^2+z^2}}=\arccos\frac zr=\begin{cases}\arctan\frac{\sqrt{x^2+y^2}}z&\mathrm{if~}z>0\\\\\pi+\arctan\frac{\sqrt{x^2+y^2}}z&\mathrm{if~}z<0\\\\+\frac\pi2&\mathrm{if~}z=0\mathrm{~and~}\sqrt{x^2+y^2}\neq0\\\mathrm{undefined}&\mathrm{if~}x=y=z=0&\end{cases}\\\varphi=\mathrm{sgn}(y)\arccos\frac x{\sqrt{x^2+y^2}}=\begin{cases}\arctan(\frac8x)&\mathrm{if~}x>0,\\\arctan(\frac9x)+\pi&\mathrm{if~}x<0\mathrm{~and~}y\geq0,\\+\frac\pi2&\mathrm{if~}x<0\mathrm{~and~}y>0,\\-\frac\pi2&\mathrm{if~}x=0\mathrm{~and~}y>0,\\\mathrm{undefined}&\mathrm{if~}x=0\mathrm{~and~}y=0.&\end{cases}
+    $$
+
+    :::
+
+​		:::tip[例子]
+$$
+\begin{align*}
+V=3x^2+2xy-z^2
+\\ \vec E=(-6x-2y,-2x,2z)^T\\
+\vec E=\frac{2aq}{4\pi \varepsilon _0r^3}(2\cos \theta ,\sin \theta ,0)_{sp}^T
+\end{align*}
+$$
+​		:::

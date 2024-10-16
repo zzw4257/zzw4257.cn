@@ -8,16 +8,6 @@ draft: false
 ---
 # 普物二总结——电磁学部分
 
-
-
-```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
-```
-
 :::tip[About the tutor]
 
 Prof.*FangMinghu*
@@ -640,7 +630,54 @@ $$
 
 ### Sparks
 
+High electric fields can ionize nonconducting materials(**dielectrics**)
 
+(Insulator->Conductor)
+
+:::note[ball breakdown]
+
+we have two ball shell with same potential $V$
+
+Ball 2 is as twice large as Ball 1
+
+as $V$ goes up, the Ball 1 will breakdown first
+$$
+E_s=\frac{Q}{4\pi \varepsilon _0 r^2},V=\frac{Q}{4\pi \varepsilon_0 r}\Rightarrow E=\frac{V}{r}
+$$
+then $r_1<r_2\Rightarrow E_1>E_2$
+
+:::
+
+![image-20241015101813495](/pic/phy2/Potential_2.png)
+
+- $\Delta V>0$ means we go uphill
+- $\Delta V<0$ means we go downhill
+
+$$
+V(r)=V_\infty -\int_{\infty}^c \vec E_l\cdot \vec l-\int_{c}^b \vec E_l\cdot \vec l-\int_{b}^a \vec E_l\cdot \vec l-\int_{a}^r \vec E_l\cdot \vec l\\=V_\infty-\left(\int _{\infty}^c+\int_{b}^{a}\right )\frac{1}{4\pi \varepsilon _0}\frac{Q}{r^2}\mathrm dr-\int_{a}^r \frac{1}{4\pi\varepsilon _0}\frac{Qr}{a^3}\mathrm dr\\=\frac{Q}{4\pi \varepsilon _0}\left(\frac{1}{a}-\left(\frac{1}{b}-\frac{1}{c}\right)+\frac{1}{2a}\left(1-\frac{r^2}{a^2}\right)\right)
+$$
+
+you can split into two patterns
+
+### 28-4 Equipotentials
+
+when in the equipotential  surface we can conclude
+$$
+\vec E\cdot \mathrm d\vec l\equiv V
+$$
+
+
+### 28-5 Potential of a charged conductors
+
+:::important
+
+Claim: The surface of a conductor is an equipotential surfacewhen two sphere conductors are attatched to each others.
+$$
+\frac{Q_A}{Q_B}=\frac{r_A}{r_B}
+$$
+:::
+
+for example , when a point of charge is placed off-center inside a sphere conductor,the inside surface will be inuniform and the outside surface will be uniform
 
 ### 28-6 Calculate E from Potential
 
@@ -696,3 +733,64 @@ V=3x^2+2xy-z^2
 \end{align*}
 $$
 :::
+
+then we have two eg
+
+
+
+:::note[dipole]
+
+![image-20241015114126009](/pic/P_dipole.png)
+$$
+V(r)=\frac{q}{4\pi \varepsilon _0}\frac{r_2-r_1}{r_1r_2}\to \frac{1}{4\pi \varepsilon _0}\frac{2aq\cos \theta}{r^2}(r>>a)
+$$
+then 
+$$
+V(r,\theta)=\frac{1}{4\pi \varepsilon _0}\frac{2aq\cos \theta}{r^2}\\E_r=-\frac{\partial V}{\partial  r}\\E_\theta=-\frac{\partial V}{\partial  \theta}\\\Rightarrow \vec E=\frac{2aq}{4\pi \varepsilon _0 r^3}((2\cos \theta )\hat r+\sin \theta \hat \theta)
+$$
+![image-20241015114612342](/pic/kk.png)
+
+it's easy to see that $\arg \max_{\theta } ||\vec E||=\frac{\pi}{2}$
+
+:::
+
+:::note[eg. disk]
+
+![image-20241015114925818](/pic/phy2/P_disk.png)
+$$
+\begin{aligned}
+&dq=2\pi\omega\cdot d\omega\cdot\sigma \\
+&dV=\frac{dq}{4\pi\varepsilon_{0}\sqrt{z^{2}+\omega^{2}}}=\frac{2\pi\omega\cdot d\omega\cdot\sigma}{4\pi\varepsilon_{0}\sqrt{z^{2}+\omega^{2}}} \\
+&V=\int_{0}^{R}\frac{2\pi\omega\cdot d\omega\cdot\sigma}{4\pi\varepsilon_{0}\sqrt{z^{2}+\omega^{2}}}=\frac{\sigma}{2\varepsilon_{0}}\big(\sqrt{z^{2}+R^{2}}-z\big) \\
+&E_{z}=-\frac{\partial V}{\partial z}=-\frac{\sigma}{2\varepsilon_{0}}(\frac{2z}{2\sqrt{R^{2}+z^{2}}}-1) \\
+&=\frac{\sigma}{2\varepsilon_{0}}(1-\frac{1}{\sqrt{1+(R/z)^{2}}})
+\end{aligned}
+$$
+:::important[a e.g for getting $v$ with $\Delta U$]
+$$
+\frac{1}{2}mv^2=K=-\Delta U=-q\Delta V\Rightarrow v=\sqrt{\frac{2q\Delta V}{m}}
+$$
+we can measure $\alpha $ partical's large velocity by measuring eletrostatic information like difference of potential
+
+:::
+
+### Appendix method of images
+
+![image-20241015120204563](/pic/phy2/imaging.png)
+
+we can see
+$$
+E(\vec r_s)=\frac{\sigma(\vec r_s)}{\varepsilon _0}
+$$
+
+## 30 Capacitance and Dielectrics
+
+### 30-1 Capacitors
+
+- Capacitance:$C=\frac{q}{\Delta V}$
+
+- $$
+  
+  $$
+
+- 

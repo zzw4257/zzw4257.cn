@@ -888,4 +888,5 @@ $$
 $$
 C=\frac{2\pi \varepsilon _0L}{\ln\frac{b}{a}\ln \frac{d}{c}}
 $$
+
 ## 30-2 Energy storage in E-field

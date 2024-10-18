@@ -20,4 +20,6 @@ draft: false
 
 你可能需要[Deploy app servers close to your users · Fly](https://fly.io/)
 
+[给你的Markdown扩展新语法吧：上篇 - 银河渡舟](https://suborbit.net/posts/extend-markdown-syntax-theoretical/)
+
 ## 友链组件

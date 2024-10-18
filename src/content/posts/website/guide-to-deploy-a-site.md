@@ -5,7 +5,7 @@ description: "你是否希望拥有自己的fancy site？是否想从简洁但�
 image: "./002.jpg"
 tags: ["website", "github", "guide", "record"]
 category: Guides
-draft: false
+draft: true
 ---
 # 【微指南】救赎你的网站梦
 
@@ -299,27 +299,28 @@ Address: 172.67.179.244
 以下是对整个过程的简练总结：
 
 1. **查询权威域名服务器**：
+
    - 使用命令 `nslookup -type=NS cubicy.icu`，得知权威域名服务器为 Cloudflare 的两个名称服务器。
-
 2. **查询 IP 地址**：
+
    - 使用命令 `nslookup -type=A cubicy.icu`，返回两个 IP 地址：**172.67.179.244** 和 **104.21.31.206**。
-
 3. **多次查询 A 记录**：
+
    - 运行循环查询，得到相同的 IP 地址，表明 DNS 记录稳定。
-
 4. **DNS 的好处**：
+
    - 返回不同 IP 地址有助于负载均衡和故障转移，提高可用性和用户体验。
-
 5. **查找 Base64 编码文本**：
+
    - 使用命令 `nslookup -type=TXT cubicy.icu`，找到 Base64 编码文本并成功解码为与失恋相关的歌词。
-
 6. **查询子域名的 IP 地址**：
+
    - 查询 `www.cubicy.icu` 和 `blog.cubicy.icu`，得知它们指向相同的 IP 地址。
-
 7. **直接访问 IP 地址**：
-   - 尝试直接访问 IP 地址，结果显示 Cloudflare 阻止了直接访问，要求有效的主机头。
 
+   - 尝试直接访问 IP 地址，结果显示 Cloudflare 阻止了直接访问，要求有效的主机头。
 8. **推测使用的服务和技术**：
+
    - YYY 利用 Cloudflare 提供的 CDN、DNS 解析、DDoS 防护和 IP 地址隐藏等服务。
 
 类似的

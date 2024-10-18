@@ -1,5 +1,5 @@
 ---
-title: ZJU ADS 速通 all in one
+title: [ZJU:21120491]ZJU ADS 速通 all in one
 published: 2024-10-08
 description: 写一个集成度高一点的省流笔记～
 tags: [note,ads,CS]
@@ -8,6 +8,16 @@ draft: false
 ---
 
 # 课程相关
+
+:::important[课程信息]
+
+- `名字` ：[浙江大学 21120491]高级数据结构与算法分析
+
+- `老师` ：卜佳俊 
+
+:::
+
+> *其实fds和ads真的可以合成一门课的…*
 
 ## Grading
 

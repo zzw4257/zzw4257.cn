@@ -13,4 +13,4 @@ draft: false
 
 voice made with suno.ai
 
-<iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=113329188112302&bvid=BV1qTCDYpEQ7&cid=26352682011&p=1" scrolling="no" border="0" frameborder="no" framespace ="0" allowfullscreen="true"></iframe>
+<iframe width="100%" height="468" src="https://player.bilibili.com/player.html?isOutside=true&aid=113329188112302&bvid=BV1qTCDYpEQ7&cid=26352682011&p=1" scrolling="no" border="0" frameborder="no" framespace="0" allowfullscreen="true"></iframe>

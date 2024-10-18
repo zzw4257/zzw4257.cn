@@ -1,19 +1,17 @@
 ---
-title: [ZJU:21120491]ZJU ADS 速通 all in one
+title: ZJU ADS 速通 all in one
 published: 2024-10-08
 description: 写一个集成度高一点的省流笔记～
 tags: [note,ads,CS]
 category: CS
 draft: false
 ---
-
 # 课程相关
 
 :::important[课程信息]
 
 - `名字` ：[浙江大学 21120491]高级数据结构与算法分析
-
-- `老师` ：卜佳俊 
+- `老师` ：卜佳俊
 
 :::
 
@@ -30,7 +28,7 @@ draft: false
 
 :::
 
-------
+---
 
 （总共60，QA可能有分）
 
@@ -41,7 +39,6 @@ Final Exam 40%（要求大于等于40/100卷面分）
 - 高级数据结构
 
   主要包括 AVL 树、Splay 树、红黑树、B+ 树、倒排索引、左式堆、斜堆和二项堆等。
-
 - 算法分析
 
   主要包括摊还分析、回溯、分治、动态规划、贪心、NP 问题、近似算法、局部搜索、随机算法、并行算法和外部排序等。
@@ -49,8 +46,6 @@ Final Exam 40%（要求大于等于40/100卷面分）
 Project 20 report 6 presentation 10~15min
 
 GD=助教和同学成绩平均值
-
-
 
 # 平衡树专题
 
@@ -72,33 +67,41 @@ GD=助教和同学成绩平均值
 
 :::note
 
-随机情况下，$\mathcal O(h(\mathcal T))=\mathcal O(\log n)$​
+随机情况下，$\mathcal O(h(\mathcal T))=\mathcal O(\log n)$
 
 :::tip[proof by [Entropy Increaser](https://blog.csdn.net/EI_Captain)]
 
 由琴生不等式
+
 $$
 2^{\mathbb E[x]}\leqslant \mathbb E[2^x]
 $$
+
 因此我们可以考虑构造
+
 $$
 f_x=\mathbb E[2^{h_x}]\\
 $$
+
 考虑用层序遍历对节点重编号，在该意义下，$fa_i\in [1,i)(i\geqslant 2)$
 
 则
+
 $$
 f_{i}=\frac{\displaystyle \sum _{j=1}^{i-1}f_j}{\frac{i-1}{2}}=\frac{2}{i-1}\sum_{j=1}^{i-1}f_j
 $$
+
 解递归式得到
+
 $$
 Sf_{n}=\frac{n(n+1)}{2}=\mathcal O(n^2)
 $$
+
 即
+
 $$
 2^{\mathbb {E}[h(\mathcal T)]}\leqslant \mathbb E[2^{h(\mathcal T)}]\leqslant \mathbb E[\sum _{x} 2^{h(x)}]=\mathcal O(n^2)
 $$
-
 
 我们有$\mathbb E[h(\mathcal T)]\leqslant \mathcal O(\log n)$，下界是不需要说明的
 
@@ -113,24 +116,26 @@ $$
 :::important[重要定义]
 
 - $\mathrm{BF}(x)=h_L-h_R$
-- $\mathcal T$ is balanced $\Leftrightarrow$ $\mathrm{BF_x}\in \{-1,0,1\}$​
+- $\mathcal T$ is balanced $\Leftrightarrow$ $\mathrm{BF_x}\in \{-1,0,1\}$
 - `trouble source`:(假定当前调整位置为$x$)出现失衡的$x$的一级分支
 - `trouble maker`:(假定当前调整位置为$x$)出现失衡的$x$的二级分支
-- 点的旋转：指根据点相对其父结点的方向决定旋转方向，具体而言通过将$x$​转到根的位置，只影响原结构的二级子边
+- 点的旋转：指根据点相对其父结点的方向决定旋转方向，具体而言通过将$x$转到根的位置，只影响原结构的二级子边
 - 点的方向：点相对父亲（假设存在）的子边方向
 
 :::
 
 容易发现对于$h$层的AVL,其最少结点数为
+
 $$
 f_h=F_{h+3}-1= \mathcal O(\Phi^h)
 $$
+
 则有对于$n$个节点的AVL，其最大高度为$\mathcal O(\log _\Phi n)$
 
 增补的操作本质上共两类，单旋和双旋，这里我们采取一个非常简单的口诀
 
->- 从矛盾点向插入位置走两级同向，转一级分支一次
->- 从矛盾点向插入位置走两级异向，从下往上转两次
+> - 从矛盾点向插入位置走两级同向，转一级分支一次
+> - 从矛盾点向插入位置走两级异向，从下往上转两次
 
 ## Splay Tree
 
@@ -148,7 +153,7 @@ AVL的限制很紧，时刻保证左右子树的高度平衡性，我们考虑�
 
 - $x$的父节点为根节点，则单旋$x$,zig
 - $x$和父节点的方向相同，单旋父节点再单旋$x$,zigzag
-- $x$和父节点的方向相异，单旋两次$x$​，zigzig
+- $x$和父节点的方向相异，单旋两次$x$，zigzig
 
 ---
 
@@ -166,13 +171,13 @@ AVL的限制很紧，时刻保证左右子树的高度平衡性，我们考虑�
 
 - NIL节点：红黑树用于确保结构完备性定义的"空叶子"（下文的叶子指儿子均为NIL的节点）
 - $\mathrm{bh}(x)$: $x$ 到任意一个叶子节点路径（不含父亲和NIL节点）上的黑色节点数量
-
 - 4 requirements:
 
   > - root is **black**
   > - NIL is **black**
   > - **Red** must have **black** kids
   > - $\mathrm{bh}$ 存在
+  >
 
 :::
 
@@ -185,21 +190,18 @@ AVL的限制很紧，时刻保证左右子树的高度平衡性，我们考虑�
 - $x=fa=uc=\mathtt{\color{red} R}\Rightarrow$把父亲层和祖父层换色，直接结束
 - $x=fa=\mathtt {\color{red} R},uc=\mathtt {B}\Rightarrow $至多转两次
   - 首先$x,fa$异向转成同向
-  - $x,fa$​同向后，父亲红色推祖父，父亲转上去
+  - $x,fa$同向后，父亲红色推祖父，父亲转上去
 
 对现在的
 
 最后是复杂的Delete操作，这里我们假定已经找到位置并且删除，分类讨论：
 
 - 叶子节点：直接NIL替换
-
 - 有一个非NIL子节点，直接替换
-
 - 两个都是非NIL子节点，直接用前驱后继替代，然后到替代的节点开始考虑
 
   - 消失红色节点，完全不需要管
   - 消失黑色节点，则从这个位置开始递归考虑
-
 
 （下面内容我故意不放图大家可以自行思考，更能加深体会）
 
@@ -211,23 +213,21 @@ AVL的限制很紧，时刻保证左右子树的高度平衡性，我们考虑�
 
 :::note[分类讨论]
 
-- 删$x$​，兄弟和外甥都是黑的，父亲随便
+- 删$x$，兄弟和外甥都是黑的，父亲随便
   - 父亲红，和兄弟换色
   - 父亲黑，兄弟变红，递归父亲
-- 删$x$​，兄弟黑，异侧儿子红的，父亲随便
+- 删$x$，兄弟黑，异侧儿子红的，父亲随便
   - 兄弟染成父亲颜色，父亲，异侧儿子变为黑色，转兄弟
 - 删$x$，兄弟黑，异侧儿子黑的，父亲随便
   - 交换父亲和同侧儿子颜色，转同侧儿子，变为case2
 - 删$x$，兄弟红，父亲黑
-  - 交换父亲和兄弟颜色，转兄弟，继续递归$x$​
+  - 交换父亲和兄弟颜色，转兄弟，继续递归$x$
 
 :::tip
 
 一个核心思想是黑节点上移吸收不平衡的部分
 
 :::
-
-
 
 ## B+ Tree
 
@@ -268,12 +268,11 @@ B+ Tree是一种扁平化索引结构，其在连续地址优势下相对红黑�
 数据量大后，我们考虑改善index范式
 
 - distributed index
+
   - Term-partitional index
   - Document-partitional index
 - Dynamic indexing
-
 - Compression,对位置序列做差分
-
 - Threshold: 回答排序
 
 ---
@@ -302,41 +301,33 @@ B+ Tree是一种扁平化索引结构，其在连续地址优势下相对红黑�
 
 :::
 
-|    操作 `\` 数据结构[^ref4]     |                            配对堆                            |    二叉堆    |    左偏树    |        二项堆        |     斐波那契堆     |
-| :-----------------------------: | :----------------------------------------------------------: | :----------: | :----------: | :------------------: | :----------------: |
-|         插入（insert）          |                            $O(1)$                            | $O(\log n)$  | $O(\log n)$  |  $O(\log n)$[^ref1]  |       $O(1)$       |
-|     查询最小值（find-min）      |                            $O(1)$                            |    $O(1)$    |    $O(1)$    | $O(1)$[^ref2][^ref3] |       $O(1)$       |
-|    删除最小值（delete-min）     |                      $O(\log n)$[^ref3]                      | $O(\log n)$  | $O(\log n)$  |     $O(\log n)$      | $O(\log n)$[^ref3] |
-|          合并 (merge)           |                            $O(1)$                            |    $O(n)$    | $O(\log n)$  |     $O(\log n)$      |       $O(1)$       |
-| 减小一个元素的值 (decrease-key) | $o(\log n)$（下界 $\Omega(\log \log n)$，上界 $O(2^{2\sqrt{\log \log n}})$）[^ref3] | $O(\log n)$  | $O(\log n)$  |     $O(\log n)$      |   $O(1)$[^ref3]    |
-|        是否支持可持久化         |                           $\times$                           | $\checkmark$ | $\checkmark$ |     $\checkmark$     |      $\times$      |
+|   操作 `\` 数据结构[^ref4]   |                                          配对堆                                          |     二叉堆     |     左偏树     |        二项堆        |      斐波那契堆      |
+| :-----------------------------: | :---------------------------------------------------------------------------------------: | :------------: | :------------: | :------------------: | :------------------: |
+|         插入（insert）         |                                         $O(1)$                                         | $O(\log n)$ | $O(\log n)$ | $O(\log n)$[^ref1] |       $O(1)$       |
+|     查询最小值（find-min）     |                                         $O(1)$                                         |    $O(1)$    |    $O(1)$    |   $O(1)$[^ref3]   |       $O(1)$       |
+|    删除最小值（delete-min）    |                                   $O(\log n)$[^ref3]                                   | $O(\log n)$ | $O(\log n)$ |    $O(\log n)$    | $O(\log n)$[^ref3] |
+|          合并 (merge)          |                                         $O(1)$                                         |    $O(n)$    | $O(\log n)$ |    $O(\log n)$    |       $O(1)$       |
+| 减小一个元素的值 (decrease-key) | $o(\log n)$（下界 $\Omega(\log \log n)$，上界 $O(2^{2\sqrt{\log \log n}})$）[^ref3] | $O(\log n)$ | $O(\log n)$ |    $O(\log n)$    |   $O(1)$[^ref3]   |
+|        是否支持可持久化        |                                        $\times$                                        | $\checkmark$ | $\checkmark$ |    $\checkmark$    |      $\times$      |
 
-[^ref1]: 单次插入的复杂度为 $O(\log n)$，但有 $k$ 次连续插入时，可创建一个只包含要插入元素的二项堆，再将此堆与原先的二项堆进行合并，均摊复杂度为 $O(1)$
-
-[^ref2]: 可以保存一个指向最小元素的指针，在执行其他操作时修改该指针，即可在 $O(1)$ 的复杂度下进行查询了
-
-[^ref3]: 复杂度为均摊复杂度
-
-[^ref4]: 表格来自于 [Wikipedia](https://en.wikipedia.org/wiki/Priority_queue#Summary_of_running_times)
-
-|                          Operation                           | find-min |    delete-min    |                         decrease-key                         |      insert      |                             meld                             | make-heap[[a\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-14) |
-| :----------------------------------------------------------: | :------: | :--------------: | :----------------------------------------------------------: | :--------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| [Binary](https://en.wikipedia.org/wiki/Binary_heap)[[10\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-CLRS-10) |  *Θ*(1)  |   *Θ*(log *n*)   |                         *Θ*(log *n*)                         |   *Θ*(log *n*)   |                           *Θ*(*n*)                           |                           *Θ*(*n*)                           |
-| [Skew](https://en.wikipedia.org/wiki/Skew_heap)[[11\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-sleator-tarjan-skew-11) |  *Θ*(1)  | *O*(log *n*) am. |                       *O*(log *n*) am.                       | *O*(log *n*) am. |                       *O*(log *n*) am.                       |                         *Θ*(*n*) am.                         |
-| [Leftist](https://en.wikipedia.org/wiki/Leftist_tree)[[12\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-tarjan-leftist-12) |  *Θ*(1)  |   *Θ*(log *n*)   |                         *Θ*(log *n*)                         |   *Θ*(log *n*)   |                         *Θ*(log *n*)                         |                           *Θ*(*n*)                           |
-| [Binomial](https://en.wikipedia.org/wiki/Binomial_heap)[[10\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-CLRS-10)[[14\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-15) |  *Θ*(1)  |   *Θ*(log *n*)   |                         *Θ*(log *n*)                         |    *Θ*(1) am.    | *Θ*(log *n*)[[b\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-bootstrap-meld-16) |                           *Θ*(*n*)                           |
-| [Skew binomial](https://en.wikipedia.org/wiki/Skew_binomial_heap)[[15\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-brodal-okasaki-17) |  *Θ*(1)  |   *Θ*(log *n*)   |                         *Θ*(log *n*)                         |      *Θ*(1)      | *Θ*(log *n*)[[b\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-bootstrap-meld-16) |                           *Θ*(*n*)                           |
-| [2–3 heap](https://en.wikipedia.org/wiki/2–3_heap)[[17\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-19) |  *Θ*(1)  | *O*(log *n*) am. |                            *Θ*(1)                            |    *Θ*(1) am.    | *O*(log *n*)[[b\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-bootstrap-meld-16) |                           *Θ*(*n*)                           |
-| [Bottom-up skew](https://en.wikipedia.org/wiki/Skew_heap)[[11\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-sleator-tarjan-skew-11) |  *Θ*(1)  | *O*(log *n*) am. |                       *O*(log *n*) am.                       |    *Θ*(1) am.    |                          *Θ*(1) am.                          |                         *Θ*(*n*) am.                         |
-| [Pairing](https://en.wikipedia.org/wiki/Pairing_heap)[[18\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-Iacono-20) |  *Θ*(1)  | *O*(log *n*) am. | *o*(log *n*) am.[[c\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-pairingdecreasekey-23) |      *Θ*(1)      |                            *Θ*(1)                            |                           *Θ*(*n*)                           |
-| [Rank-pairing](https://en.wikipedia.org/w/index.php?title=Rank-pairing_heap&action=edit&redlink=1)[[21\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-24) |  *Θ*(1)  | *O*(log *n*) am. |                          *Θ*(1) am.                          |      *Θ*(1)      |                            *Θ*(1)                            |                           *Θ*(*n*)                           |
-| Fibonacci[[10\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-CLRS-10)[[2\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-Fredman_And_Tarjan-2) |  *Θ*(1)  | *O*(log *n*) am. |                          *Θ*(1) am.                          |      *Θ*(1)      |                            *Θ*(1)                            |                           *Θ*(*n*)                           |
-| [Strict Fibonacci](https://en.wikipedia.org/wiki/Strict_Fibonacci_heap)[[22\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-25)[[d\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-optimum-26) |  *Θ*(1)  |   *Θ*(log *n*)   |                            *Θ*(1)                            |      *Θ*(1)      |                            *Θ*(1)                            |                           *Θ*(*n*)                           |
-| [Brodal](https://en.wikipedia.org/wiki/Brodal_queue)[[23\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-27)[[d\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-optimum-26) |  *Θ*(1)  |   *Θ*(log *n*)   |                            *Θ*(1)                            |      *Θ*(1)      |                            *Θ*(1)                            | *Θ*(*n*)[[24\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-28) |
+|                                                                                                 Operation                                                                                                 | find-min |      delete-min      |                                             decrease-key                                             |        insert        |                                              meld                                              |   make-heap[[a\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-14)   |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------: | :------------------: | :---------------------------------------------------------------------------------------------------: | :------------------: | :--------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+|                                           [Binary](https://en.wikipedia.org/wiki/Binary_heap)[[10\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-CLRS-10)                                           | *Θ*(1) |  *Θ*(log *n*)  |                                           *Θ*(log *n*)                                           |  *Θ*(log *n*)  |                                         *Θ*(*n*)                                         |                                *Θ*(*n*)                                |
+|                                      [Skew](https://en.wikipedia.org/wiki/Skew_heap)[[11\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-sleator-tarjan-skew-11)                                      | *Θ*(1) | *O*(log *n*) am. |                                         *O*(log *n*) am.                                         | *O*(log *n*) am. |                                      *O*(log *n*) am.                                      |                              *Θ*(*n*) am.                              |
+|                                     [Leftist](https://en.wikipedia.org/wiki/Leftist_tree)[[12\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-tarjan-leftist-12)                                     | *Θ*(1) |  *Θ*(log *n*)  |                                           *Θ*(log *n*)                                           |  *Θ*(log *n*)  |                                       *Θ*(log *n*)                                       |                                *Θ*(*n*)                                |
+|          [Binomial](https://en.wikipedia.org/wiki/Binomial_heap)[[10\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-CLRS-10)[[14\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-15)          | *Θ*(1) |  *Θ*(log *n*)  |                                           *Θ*(log *n*)                                           |    *Θ*(1) am.    | *Θ*(log *n*)[[b\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-bootstrap-meld-16) |                                *Θ*(*n*)                                |
+|                               [Skew binomial](https://en.wikipedia.org/wiki/Skew_binomial_heap)[[15\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-brodal-okasaki-17)                               | *Θ*(1) |  *Θ*(log *n*)  |                                           *Θ*(log *n*)                                           |      *Θ*(1)      | *Θ*(log *n*)[[b\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-bootstrap-meld-16) |                                *Θ*(*n*)                                |
+|                                             [2–3 heap](https://en.wikipedia.org/wiki/2–3_heap)[[17\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-19)                                             | *Θ*(1) | *O*(log *n*) am. |                                               *Θ*(1)                                               |    *Θ*(1) am.    | *O*(log *n*)[[b\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-bootstrap-meld-16) |                                *Θ*(*n*)                                |
+|                                 [Bottom-up skew](https://en.wikipedia.org/wiki/Skew_heap)[[11\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-sleator-tarjan-skew-11)                                 | *Θ*(1) | *O*(log *n*) am. |                                         *O*(log *n*) am.                                         |    *Θ*(1) am.    |                                         *Θ*(1) am.                                         |                              *Θ*(*n*) am.                              |
+|                                         [Pairing](https://en.wikipedia.org/wiki/Pairing_heap)[[18\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-Iacono-20)                                         | *Θ*(1) | *O*(log *n*) am. | *o*(log *n*) am.[[c\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-pairingdecreasekey-23) |      *Θ*(1)      |                                           *Θ*(1)                                           |                                *Θ*(*n*)                                |
+|                      [Rank-pairing](https://en.wikipedia.org/w/index.php?title=Rank-pairing_heap&action=edit&redlink=1)[[21\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-24)                      | *Θ*(1) | *O*(log *n*) am. |                                             *Θ*(1) am.                                             |      *Θ*(1)      |                                           *Θ*(1)                                           |                                *Θ*(*n*)                                |
+|                       Fibonacci[[10\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-CLRS-10)[[2\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-Fredman_And_Tarjan-2)                       | *Θ*(1) | *O*(log *n*) am. |                                             *Θ*(1) am.                                             |      *Θ*(1)      |                                           *Θ*(1)                                           |                                *Θ*(*n*)                                |
+| [Strict Fibonacci](https://en.wikipedia.org/wiki/Strict_Fibonacci_heap)[[22\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-25)[[d\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-optimum-26) | *Θ*(1) |  *Θ*(log *n*)  |                                               *Θ*(1)                                               |      *Θ*(1)      |                                           *Θ*(1)                                           |                                *Θ*(*n*)                                |
+|          [Brodal](https://en.wikipedia.org/wiki/Brodal_queue)[[23\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-27)[[d\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-optimum-26)          | *Θ*(1) |  *Θ*(log *n*)  |                                               *Θ*(1)                                               |      *Θ*(1)      |                                           *Θ*(1)                                           | *Θ*(*n*)[[24\]](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-28) |
 
 a.m表示均摊
 
-## Binary Heaps 
+## Binary Heaps
 
 我们从最基础的二叉堆开始复习
 
@@ -351,8 +342,6 @@ a.m表示均摊
 实现略去，这里需要记忆的是关于堆的合并，其本质是重建
 
 ## Leftist Heaps
-
-
 
 :::important[重要定义]
 
@@ -377,7 +366,7 @@ a.m表示均摊
 
 更新完后，检查左偏性质并交换
 
-这里容易发现递归层数为两棵子树的右路径长和，因此单次合并复杂度为$\mathcal O(\log n)$​
+这里容易发现递归层数为两棵子树的右路径长和，因此单次合并复杂度为$\mathcal O(\log n)$
 
 ## Skew Heaps
 
@@ -425,21 +414,27 @@ a.m表示均摊
 
 我们思考的起点是
 
-- $c_i\leqslant l_1+h_1+l_2+h_2$​即右路径长度和
+- $c_i\leqslant l_1+h_1+l_2+h_2$即右路径长度和
 - 依赖定义，对于重节点总数的改变$\Delta \Phi \leqslant l_1+l_2-h_1-h_2$
 
 定义势能函数
+
 $$
 \Phi(\mathcal H)=\sum _{x\in \mathcal H}[S_R\geqslant \frac{1}{2}S_x]
 $$
+
 credit
+
 $$
 \hat c_i=c_i+\Phi(\mathcal H')-\Phi(\mathcal H_1)-\Phi(\mathcal H_2)=c_i+\Delta \Phi
 $$
+
 我们可以得到
+
 $$
 \hat c_i\leqslant 2(l_1+l_2)
 $$
+
 我们证明$l_i=\mathcal O(\log n)$即可，这是归纳显然的
 
 显然$\hat c_i=\mathcal O(\log n)$
@@ -498,9 +493,11 @@ $$
 $c_i=\mathrm{pop\_count}(i\oplus i-1)-1$
 
 则
+
 $$
 \sum _{i=1}^n c_i\leqslant \sum _{i=1}^n\mathrm{pop\_count}(i\oplus i-1)-1\leqslant \sum_{i=1}^{n} \mathrm{suffix(i)+1}\\(2^k>n)\leqslant n+\sum _{i=1}^{2^k-1}\mathrm{suffix(i)}\\\leqslant n+ \sum _{i=1}^k i 2^{(k-i)}\leqslant n+2^k\sum _{i=1}^k\frac{i}{2^{i}}\leqslant n+2^k\leqslant 3n
 $$
+
 :::
 
 当然上述放缩并没有意义，这里纯属习惯动作
@@ -508,12 +505,14 @@ $$
 后面的不等式可以参考建堆
 
 :::tip[proof 2 势能分析]
+
 $$
 c_i=\mathrm{pop\_count}(i\oplus i-1)-1
 $$
+
 定义$\Phi(i)=\mathrm{pop\_count(i)}$
 
-则$\hat c_i=c_{i}+\Phi(i)-\Phi(i-1)=2$​
+则$\hat c_i=c_{i}+\Phi(i)-\Phi(i-1)=2$
 
 后面没必要说了
 
@@ -542,9 +541,11 @@ $$
 :::
 
 :::note[可合并堆的性质重申]
+
 $$
 \begin{array}{|ccc|}\hline\text{操作(最坏情形)(摊近)}&\text{二项堆}&\text{斐波那契堆}\\\hline\text{MAKE-HEAP}&\Theta(1)&\Theta(1)\\\text{INSERT}&\Theta(\lg n)&\Theta(1)\\\text{MNMUM}&\Theta(1)&\Theta(1)\\\text{EXTRACT-MIN}&\Theta(\lg n)&O(\lg n)\\\text{UNION}&\Theta(n)&\Theta(1)\\\text{DECREASE-KEY}&\Theta(\lg n)&\Theta(1)\\\text{DELETE}&\Theta(\lg n)&O(\lg n)\\\hline\end{array}
 $$
+
 :::
 
 容易发现二项堆在UNION或者说Merge上表现很差，我们基于这些问题给出一个更优秀的队列实现——斐波纳契堆/队列
@@ -555,14 +556,13 @@ $$
 
 - 斐波纳契堆是一个最小堆序的有根多叉树集合
   - 根被环形双向链表串起来
-  - 每个点具有`child,left,right,parent,degree,mark`属性，表示孩子列表，左右兄弟和父节点以及度数;
+  - 每个点具有 `child,left,right,parent,degree,mark`属性，表示孩子列表，左右兄弟和父节点以及度数;
   - 注意根与根(root list)，儿子与儿子，兄弟与兄弟，child list的指向是随机的
   - $x.mark$代表$x$的**在成为别人的孩子后**，是否失去国孩子，新产生时为0，成为另一个节点孩子后清零。
-  - 我们通过$H.min$​访问斐波纳契堆，指向最小根，注意这里不做平行区分($H.n$表示数目)
+  - 我们通过$H.min$访问斐波纳契堆，指向最小根，注意这里不做平行区分($H.n$表示数目)
 - 斐波纳契对用到的势函数$\Phi(\mathcal H)=t(\mathcal H)+2m(\mathcal H)$
   - $t(\mathcal H)$表示跟链表大小
   - $m(\mathcal H)$表示标记节点数
-
 
 :::
 
@@ -577,6 +577,7 @@ $H.n=0,H.min=\mathrm{NIL},\Phi(\mathcal H)=0$
 ### Insert
 
 直接生成全空的单节点插到根列表中，然后更新最小堆
+
 $$
 \begin{aligned}
 &\mathrm{FIB\_HEAP\_INSERT}(H, x) \\
@@ -607,6 +608,7 @@ $\mathcal O(1)$
 ### Merge/UNION
 
 简单的链接根链表，去诶的那个新的最小节点
+
 $$
 \begin{aligned}
 &\mathbf{FIB\_HEAP\_UNION}(H_1, H_2) \\
@@ -650,11 +652,12 @@ $$
 
 一言一蔽之
 
-找到相同度数的$x,y$，然后$y$连接到$x$,清除$y$上标记$A$​是辅助数组，用来索引根节点度数的变化
+找到相同度数的$x,y$，然后$y$连接到$x$,清除$y$上标记$A$是辅助数组，用来索引根节点度数的变化
 
-具体实现上，我们先找一个根$x=w$，然后对于其$d$，我们找$A[d]=y$，然后合并$x'\leftarrow (y\to x)$​，现在度数加一，问题迭代下去
+具体实现上，我们先找一个根$x=w$，然后对于其$d$，我们找$A[d]=y$，然后合并$x'\leftarrow (y\to x)$，现在度数加一，问题迭代下去
 
 处理完之后，我们可以基于A来更新$\mathcal H$
+
 $$
 \begin{aligned}
 &\mathbf{CONSOLIDATE}(H) \\
@@ -683,7 +686,9 @@ $$
 23.\ & \quad \quad H.\text{min} = A[i] \\
 \end{aligned}
 $$
+
 用到的连接过程
+
 $$
 \begin{aligned}
 &\text{FIB-HEAP-LINK}(H, y, x) \\
@@ -692,6 +697,7 @@ $$
 3.\ & y.\text{mark} = \text{FALSE}
 \end{aligned}
 $$
+
 这一部分的复杂度分析最为复杂，首先引入引理
 
 :::tip[Lemma 1: sup of max_degree]
@@ -703,10 +709,12 @@ $$
 :::
 
 现在返回来考虑摊还代价，注意这里没有点被标记
+
 $$
 \Delta \Phi \leqslant ((D(n)+1)+2m(\mathcal H))-(t(\mathcal H)+2m(\mathcal H))\\
 c_i=\mathcal O(D(n)+t(\mathcal H))
 $$
+
 这里解释一下基础操作数
 
 循环本身一定不会多于最终分裂出来的根数
@@ -727,13 +735,13 @@ $\hat c_i=\mathcal O(D(n))=\mathcal O(\log n)$
 
   当第3步发生是，$x$成为新的根
 
-  当第1，2步发生，且$x$的一个孩子被切掉则$x.mark=1$​
-
+  当第1，2步发生，且$x$的一个孩子被切掉则$x.mark=1$
 - 级联切断(cascading-cut)
 
   当一个被标记的节点被再次切除孩子，则其紧邻的被标记祖先链均需要被切断，这个过程是递归的
 
 :::
+
 $$
 \begin{aligned}
 &\mathbf{FIB\_HEAP\_DECREASE\_KEY}(H, x, k) \\
@@ -772,16 +780,18 @@ $$
 $$
 
 这里我们假设级连切除的次数是$c$(注意包含递归层)
+
 $$
 \Delta \Phi\leqslant ((t(\mathcal H)+c)+2(m(\mathcal H)-c+2))-(t(\mathcal H)+2m(\mathcal H)=4-c)
 $$
+
 $c_i=\mathcal O(c)$
 
 则在考虑到势能可以随便修改单位$1$的情况下
+
 $$
 \hat c_i=\mathcal O(c)+(4-c)k=\mathcal O(1)
 $$
-
 
 ### Delete
 
@@ -827,19 +837,13 @@ Node* merges(Node* x) {
 }
 ```
 
-这里`meld(T1,T2)`是配对操作
-
-
+这里 `meld(T1,T2)`是配对操作
 
 ---
 
 Decresed key
 
 我们得进一步重构了
-
-
-
-
 
 # 复杂度分析学
 
@@ -853,4 +857,10 @@ Decresed key
 
 ## 主定理
 
-## 
+[^ref1]: 单次插入的复杂度为 $O(\log n)$，但有 $k$ 次连续插入时，可创建一个只包含要插入元素的二项堆，再将此堆与原先的二项堆进行合并，均摊复杂度为 $O(1)$
+    
+[^ref2]: 可以保存一个指向最小元素的指针，在执行其他操作时修改该指针，即可在 $O(1)$ 的复杂度下进行查询了
+    
+[^ref3]: 复杂度为均摊复杂度
+    
+[^ref4]: 表格来自于 [Wikipedia](https://en.wikipedia.org/wiki/Priority_queue#Summary_of_running_times)

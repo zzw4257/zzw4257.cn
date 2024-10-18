@@ -1,7 +1,6 @@
 ---
-title: 全知读者视角个人填词demo曲《因故事而生的我，因我而生的故事》
+title: 【填词向】《因故事而生的我，因我而生的故事》
 published: 2024-10-18
-description: https://www.bilibili.com/video/BV1qTCDYpEQ7/?vd_source=f0f03687a5d3fe88fb29830a57e1acaa
 tags: [video,novel]
 category: Unconcerned
 draft: false

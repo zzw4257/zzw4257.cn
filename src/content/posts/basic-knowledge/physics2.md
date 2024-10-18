@@ -783,14 +783,109 @@ $$
 E(\vec r_s)=\frac{\sigma(\vec r_s)}{\varepsilon _0}
 $$
 
+we can see that the induced charge distribution generated with a point of charge and a conductor sheet is the same as which is made by two charges. It can be proved with symmetry theorem.
+
 ## 30 Capacitance and Dielectrics
 
 ### 30-1 Capacitors
 
-- Capacitance:$C=\frac{q}{\Delta V}$
+### Classic Capacitors
 
-- $$
-  
-  $$
+:::tip[Application]
 
-- 
+- flashbulb:capacitor draw energy from battery ($s$) then release  it through bulb($ms$)
+- Laser pulse
+- thermonuclear fusion $10^{14}W,10^{-9}s,10^8K$
+
+:::
+
+Definition of Capacitance : two spatially seperated conductors($+q/-q$) $C=\frac{q}{\Delta V}$
+
+:::important
+
+one single conductor is capacitor!
+
+:::
+
+:::note[eg:Parallel Plate capacitor]
+$$
+q=\sigma A\\\Delta V=-\int _{A}^B \vec E\cdot \mathrm{d}\vec l
+$$
+:::
+
+:::note[eg:Parallel Plate capacitor]
+$$
+q=\sigma A\\\Delta V=-\int _{A}^B \vec E\cdot \mathrm{d}\vec l
+$$
+since
+$$
+EA\varepsilon _0= \sigma A\Rightarrow E=\frac{\sigma}{\varepsilon _0}\Rightarrow \Delta V=\frac{q}{A\varepsilon_0}d\Rightarrow C=\frac{\varepsilon _0 A}{d}
+$$
+:::
+
+:::tip[Application]
+
+- condenser:$C \propto \frac{1}{d}\xrightarrow{\mathrm{fixed~}\Delta V} Q\propto\frac{1}{d},I=\frac{\mathrm{d} Q}{\mathrm d t}$:the vibration -> different $I$
+
+:::
+
+:::note[eg:Cylindrical Capacitor]
+
+![image-20241018170156213](/pic/phy2/C_cylindrical)
+
+$+Q,-Q$ on surface,$\Delta V$
+$$
+2\pi r \cdot L\cdot E\cdot \varepsilon_0=Q\Rightarrow E=\frac{Q}{2\pi \varepsilon _0 Lr}
+$$
+
+$$
+\Delta V=\int_{b}^a \vec E\cdot \mathrm d\vec l =\frac{Q}{2\pi \varepsilon L\ln \frac{b}{a}},C=\frac{2\pi \varepsilon _0 L}{\ln\frac{b}{a}}
+$$
+
+:::note[ex:TV signals tansmit/coaxial cable]
+
+$a=r_i=0.15,b=r_o=2.1$
+$$
+\frac{C}{L}=\frac{2\pi\varepsilon_{0}}{\ln(b/a)}=\frac{2\pi\times8.85\times10^{-12}}{\ln(2.1/0.15)}=21\times10^{-12}F / m=21 pF / m
+$$
+:::
+
+:::note[eg:spherical capacitor]
+
+![image-20241018170915119](/pic/phy2/C_sphe)
+$$
+\vec E=\frac{q\hat r}{4\pi \varepsilon _0 r^2}\Rightarrow \Delta V=\frac{q}{4\pi \varepsilon_0 }\left(\frac{1}{a}-\frac{1}{b}\right)\Rightarrow C=\frac{4\pi \varepsilon _0ab}{b-a}
+$$
+for earth $R=6.37\times 10^6 m\Rightarrow C=7.1\times 10^{-4}\mathrm F=710\mu \mathrm F$
+
+:::
+
+### Summary
+
+- Parallel Plate:$C=\frac{\varepsilon _0 A}{d}$
+- Cylindrical Capacitor:$C=\frac{2\pi \varepsilon _0 L}{\ln\frac{b}{a}}$
+- Spherical $C=4\pi \varepsilon_0\frac{ab}{b-a} $
+
+### Parallel & Series
+
+![image-20241018171312744](/pic/phy2/C_parallel)
+
+![image-20241018171326385](/pic/phy2/C_series)
+
+for capacitors in parallel
+$$
+V=\frac{Q_1}{C_1}=\frac{Q_2}{C_2}\Rightarrow Q_2=Q_1\frac{C_2}{C_1}\\C=C_1+C_2
+$$
+for capacitors in series
+$$
+V_{ab}=\frac{Q}{C}=\frac{Q}{C_1}+\frac{Q}{C_2}\Rightarrow C=\left(\frac{1}{C_1}+\frac{1}{C_2}\right)^{-1} 
+$$
+![image-20241018171611735](/pic/phy2/C_prac)
+$$
+\frac{1}{C}=\frac{1}{C_3}+\frac{1}{C_1+C_2}
+$$
+![image-20241018171919786](/pic/phy2/C_multi-cyl)
+$$
+C=\frac{2\pi \varepsilon _0L}{\ln\frac{b}{a}\ln \frac{d}{c}}
+$$
+## 30-2 Energy storage in E-field

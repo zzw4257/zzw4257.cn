@@ -1302,7 +1302,22 @@ $$
 
 ### Microscopic explanation of Ohm Law
 
-# Chap 32/33 The Steady Magnetic Field
+![image-20241021092841895](/pic/phy2/Ohm_micro.png)
+
+:::note[drift speed of electric charge]
+$$
+j=2.4A/mm^2\\
+b=8.4\times 10^{28}m^{-3}\\
+j=\frac{\Delta i}{\Delta A}=neu\\
+u=\frac{j}{ne}=1.8\times 10^{-4}m/s<<v_t\approx 10^5m/s
+$$
+:::
+
+## 31-2 Source and Electromotive Force(emf)
+
+
+
+# ßChap 32/33 The Steady Magnetic Field
 
  ## 32-1 Basic phenomena
 

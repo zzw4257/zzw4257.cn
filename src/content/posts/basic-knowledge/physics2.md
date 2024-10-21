@@ -1315,9 +1315,7 @@ $$
 
 ## 31-2 Source and Electromotive Force(emf)
 
-
-
-# ßChap 32/33 The Steady Magnetic Field
+# Chap 32/33 The Steady Magnetic Field
 
  ## 32-1 Basic phenomena
 

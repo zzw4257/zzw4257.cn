@@ -1081,15 +1081,17 @@ we have
 
 **Induced electric dipole moment**
 
-**Electric displacement polarization** 
+**Electric displacement polarization**
 
 ![image-20241020222558545](/pic/phy2/C_nonpolar)
 
 Polar dielectrics
+
 $$
 \sum \vec p\neq 0
 $$
-**Alignment polarization** 
+
+**Alignment polarization**
 
 :::tip
 
@@ -1097,13 +1099,16 @@ In high frequency field , Electric displacement polarization plays an important 
 
 :::
 
-### Polarization 
+### Polarization
 
 Polarization intensity $\vec P$
+
 $$
 \vec P=\cfrac{\sum  \vec p_m}{\Delta V} (C\cdot m^{-2})=nq \vec l
 $$
+
 ![image-20241020222921535](/pic/phy2/C_polar)
+
 $$
 \begin{aligned}
 &dN=ndV=nldA\cos\theta \\
@@ -1122,6 +1127,7 @@ $$
 $$
 
 ![image-20241020223121085](/pic/phy2/C_depolar)
+
 $$
 \begin{aligned}
 &\sigma_e^{\prime}=P_n=P\cos\theta \\
@@ -1134,11 +1140,14 @@ $$
 &E_z^{\prime}=\oint_zdE_z^{\prime}=-\frac P{4\pi\varepsilon_0}\int_0^\pi\cos^2\theta\sin\theta d\theta\int_0^{2\pi}d\varphi=-\frac P{3\varepsilon_0}
 \end{aligned}
 $$
+
 :::note[eg2 parallel plate]
+
 $$
 \sigma_e'=P\cos \theta =P\\
 E'=\frac{\sigma_e'}{\varepsilon_0}
 $$
+
 :::
 
 ### Polarization law
@@ -1147,16 +1156,20 @@ $$
 \vec P\Rightarrow \sigma_e'\Rightarrow \vec E'\Rightarrow \vec E[\vec P(\vec E)]
 $$
 
-for general isotropic materials 
+for general isotropic materials
+
 $$
 \vec{P}=\chi_e\varepsilon_0\vec{E}(\kappa _e=1+\chi_e)
 $$
+
 $\chi _e$: Polarization coefficient
 
 for crystal materials:
+
 $$
 \begin{pmatrix}P_x\\P_y\\P_z\end{pmatrix}=\begin{pmatrix}\chi_{xx}\chi_{xy}\chi_{xz}\\\chi_{yx}\chi_{yy}\chi_{yz}\\\chi_{zx}\chi_{zy}\chi_{zz}\end{pmatrix}\begin{pmatrix}\boldsymbol{\varepsilon}_0E_x\\\boldsymbol{\varepsilon}_0E_y\\\boldsymbol{\varepsilon}_0E_z\end{pmatrix}
 $$
+
 :::note[eg:ferroelectric material]
 
 Electric hysteresis effect
@@ -1173,11 +1186,12 @@ $$
 $\vec D $ means:
 
 - Electric displacement vec
-- electric induction 
+- electric induction
 
 ![image-20241020224048323](/pic/phy2/D)
 
 let $q_0$ be inside charge,$q’$ be induced charge
+
 $$
 \begin{aligned}
 &\varepsilon_0\oint\vec{E}\bullet d\vec{A}=\sum_{In}(q_0+q') \\
@@ -1189,7 +1203,9 @@ $$
 &\boxed{\oint\vec{D}\bullet d\vec{A}=\sum_{In}q_0}
 \end{aligned}
 $$
+
 :::note[eg paralleled plate]
+
 $$
 \begin{aligned}
 &\oint\vec{D}\bullet dA=\sum q_0 \\
@@ -1200,9 +1216,11 @@ $$
 &\vec D=\kappa _e\varepsilon _0\vec E
 \end{aligned}
 $$
+
 :::
 
 :::note[eg charge in a hole]
+
 $$
 \begin{aligned}
 &\oint\vec{D}\bullet d\vec{A}=\sum q_0 \\
@@ -1211,6 +1229,7 @@ $$
 &E=\frac{D}{\kappa_e\varepsilon_0}=\frac{q_0}{4\pi\varepsilon_0\kappa_er^2}=\frac{E_0}{\kappa_e}
 \end{aligned}
 $$
+
 $\displaystyle \oint \vec D\cdot \mathrm d\vec l\neq 0$
 
 :::
@@ -1218,8 +1237,6 @@ $\displaystyle \oint \vec D\cdot \mathrm d\vec l\neq 0$
 ### Pressure Electric Effect
 
 ![image-20241020224455711](/pic/phy2/Pressure-effect)
-
-## 
 
 # Chap 31 The Steady Current*(Optional)
 
@@ -1230,10 +1247,13 @@ i=\lim _{\Delta t\to 0}\frac{\Delta q}{\Delta t}=\frac{\mathrm d q}{\mathrm d t}
 $$
 
 the current density vector $\vec j$
+
 $$
 \begin{aligned}&di=\vec{j}\bullet d\vec{A},\\&i=\iint_A\vec{j}\bullet d\vec{A}\\&=\iint_Aj\cos\theta dA\end{aligned}
 $$
+
 the steady current condition
+
 $$
 \iint_A\vec{j}\bullet d\vec{A}=0\Leftrightarrow j_1\Delta A_1=j_2\Delta A_2
 $$
@@ -1241,20 +1261,21 @@ $$
 ### Ohm Law
 
 - **linear devices** :**Metal, liquid containing acid, alkali, salt**
-- **nonlinear devices** :**Evacuated tube, transistor** 
+- **nonlinear devices** :**Evacuated tube, transistor**
 
 ![image-20241020225112215](/pic/phy2/Ohm-Law)
 
 Conductance $G=\frac{1}{R}=\frac{\mathrm d I}{\mathrm d V}(Unit:S)$
 
 **Resistivity, & conductivity** :
+
 $$
 R=\int \rho \frac{\mathrm d l}{A}, \sigma =\frac{1}{\rho}
 $$
+
 or differential form:$j=\frac{E}{\rho}=\sigma E$
 
 ![image-20241020225354688](/pic/phy2/resistivity)
-
 
 $$
 \begin{aligned}
@@ -1262,17 +1283,164 @@ $$
 &=\frac{\rho}{2\pi}[-\frac{1}{r}]_a^\infty=\frac{\rho}{2\pi a}
 \end{aligned}
 $$
+
 :::note[$\rho-T$ relativity]
 
 for metal
+
 $$
 \rho(T)=\rho_0+\alpha T
 $$
+
 :::
 
 ### Electric power and Joule Law
+
 $$
 P=\frac W{\Delta t}=iV=i^2R=\frac{V^2}R
 $$
 
 ### Microscopic explanation of Ohm Law
+
+![image-20241021092841895](/pic/phy2/Ohm_micro.png)
+
+:::note[drift speed of electric charge]
+$$
+j=2.4A/mm^2\\
+b=8.4\times 10^{28}m^{-3}\\
+j=\frac{\Delta i}{\Delta A}=neu\\
+u=\frac{j}{ne}=1.8\times 10^{-4}m/s<<v_t\approx 10^5m/s
+$$
+:::
+
+## 31-2 Source and Electromotive Force(emf)
+
+# Chap 32/33 The Steady Magnetic Field
+
+ ## 32-1 Basic phenomena
+
+:::tip[history]
+
+first hard disk 1957:50 platters
+
+:::
+
+### Basic Phenomena of Magnetism
+
+- attract small bits of metal
+- have two poles
+- like poles repel, and unlike poles attract
+- oersted experiment: $B,i\to F$
+- Solenoid is similar to a bar magnet
+- Interaction between electric currents
+
+![image-20241021084128203](/pic/phy2/bar_b.png)
+
+the magnetic field line distribution is like electric field of a electdipole pair.
+
+
+
+### Magnetic Monopoles
+
+since no monopole has ever been found $\displaystyle \oint \vec B\cdot \mathrm d \vec A=0$
+
+### Magnetic field
+
+(Ampere) molecular current: he bind solenoid and a magnet
+
+electric charge in motion is the source of Magnetic Fields
+
+### Ampere's Law(1820.12.4)
+
+:::note[Ampere's Law]
+
+![image-20241021085424748](/pic/phy2/Ampere.png)
+
+- Current element $i\mathrm d \vec s$
+
+$$
+\mathrm d F_{12}\propto \frac{i_1i_2\mathrm d s_1\mathrm d s_2}{r_{12}^2}=\frac{\mu _0}{4\pi } \cdot \frac{i_2\mathrm d \vec s_2\times (i_1\mathrm d \vec s_1\times \hat r_{12})}{r_{12}^2}
+$$
+
+$\mu_0 =4\pi\times10^{-7}(N\cdot A^{-2})$:Permeability constant
+
+:::
+
+the consider two examples
+
+:::note[eg1]
+
+![image-20241021085653200](/pic/phy2/B_eg1.png)
+$$
+\begin{aligned}
+&d\vec{F}_{12}=\frac{\mu_0}{4\pi}\frac{i_2d\vec{s}_2\times(i_1d\vec{s}_1\times\hat{r}_{12})}{r_{12}^2} \\
+&d\vec{s}_1\perp\hat{r}_{12} \\
+&\therefore dF_{12}=\frac{\mu_0}{4\pi}\frac{i_1i_2ds_1ds_2}{r_{12}^2}\\&d\vec{F}_{21}=\frac{\mu_0}{4\pi}\frac{i_1d\vec{s}_1\times(i_2d\vec{s}_2\times\hat{r}_{21})}{r_{21}^2}\\&d\vec{s}_2\perp\hat{r}_{21}\\&\therefore dF_{21}=\frac{\mu_0}{4\pi}\frac{i_1i_2ds_1ds_2}{r_{12}^2}\\&\mathrm d F_{12}= \mathrm d F_{21}\end{aligned}
+$$
+![image-20241021085726219](/pic/B_eg2.png)
+$$
+\mathrm d F_{12}=0\\\mathrm d F_{21}=\frac{\mu_0}{4\pi}\frac{i_1i_2\mathrm d s_1\mathrm d s_2}{r_{12}^2}
+$$
+:::
+
+### The Magnetic Induction Strength
+
+- Coulomb's Law
+
+$$
+\vec{F}_{12}=\frac1{4\pi\varepsilon_0}\frac{q_1q_2}{r_{12}^2}\hat{r}_{12}\\\vec{F}_{12}=q_2\vec{E}_1, \vec{E}_1=\frac{\vec{F}_{12}}{q_2}\\\therefore\vec{E}_1=\frac1{4\pi\varepsilon_0}\frac{q_1}{r_{12}^2}\hat{r}_{12}
+$$
+
+- Ampere's Law
+  $$
+  d\vec{F}_{12}=\frac{\mu_0}{4\pi}\frac{i_2d\vec{s}_2\times(i_1d\vec{s}_1\times\hat{r}_{12})}{r_{12}^2}
+  $$
+
+let us call $i_2\mathrm d \vec s_2$ the element of a test electric current
+$$
+\begin{aligned}&d\vec{F}_2=i_2d\vec{s}_2\times\frac{\mu_0}{4\pi}\oint_{\mathrm{L}_1}\frac{i_1d\vec{s}_1\times\hat{r}_{12}}{r_{12}^2}\\&\text{Define:}\quad\vec{B}_1=\frac{\mu_0}{4\pi}\oint_{\mathrm{L}_1}\frac{i_1d\vec{s}_1\times\hat{r}_{12}}{r_{12}^2}\\&\therefore\quad d\vec{F}_2=i_2d\vec{s}_2\times\vec{B}_1\end{aligned}
+$$
+
+$$
+\begin{aligned}
+&d\vec{F}_2=i_2d\vec{s}_2\times\vec{B}_1 \\
+&dF_2=i_2ds_2B_1\sin\theta \\
+&\theta=0,dF_2=0 \\
+&\theta=\frac{\pi}{2}, dF_{2} \mathrm{maximun} \\
+&\boxed{\textbf{Define: }B_1=\frac{\left(dF_2\right)_{\max}}{i_2ds_2}}
+\\&\Rightarrow \vec B_1=\frac{\mu_0}{4\pi} \oint_{L_1} \frac{i_1\mathrm d \vec s_1 \times \hat r_{12}}{r_{12}^2}
+\end{aligned}
+$$
+
+the Unit $T$(Tesla=$1N/(m\cdot A)=10^4 \mathrm{~Gauss}$)
+
+## 32-2 The magneticn field of a Current-Carrying loop
+
+:::note[Biot-Savart Law]
+
+![image-20241021091241369](/pic/phy2/Biot-Savart.png)
+$$
+\vec{B}=\frac{\mu_0}{4\pi}\oint_L\frac{id\vec{s}\times\hat{r}}{r^2}
+$$
+![image-20241021091446777](/pic/B_line.png)
+$$
+\begin{aligned}&B=\int_{A_{1}}^{A_{2}}dB=\frac{\mu_{0}}{4\pi}\int_{A_{1}}^{A_{2}}\frac{i\sin\theta dx}{r^{2}}\\&r_{0}=r\sin(\pi-\theta)=r\sin\theta, r=\frac{r_{0}}{\sin\theta}\\&x=-r_{0}ctg\theta,\quad dx=\frac{r_{0}d\theta}{\sin^{2}\theta}\\&B=\int_{\theta_{1}}^{\theta_{2}}\frac{\mu_{0}i}{4\pi}\frac{\sin\theta\cdot\frac{r_{0}d\theta}{\sin^{2}\theta}}{r_{0}^{2}}=\frac{\mu_{0}i}{4\pi r_{0}}\int_{\theta_{1}}^{\theta_{2}}\sin\theta d\theta\\&=\frac{\mu_{0}i}{4\pi r_{0}}(\cos\theta_{1}-\cos\theta_{2})\\&=\frac{\mu _0i}{2\pi r_0}\propto \frac{1}{r_0}\end{aligned}
+$$
+![image-20241021091716824](/pic/phy2/B_circular.png)
+$$
+\begin{aligned}
+&\left|d\vec{B}\right|=\left|d\vec{B}^{\prime}\right| \\
+&d{\vec{B}}={\frac{\mu_{0}}{4\pi}}{\frac{id{\vec{s}}\times{\hat{r}}}{r^{2}}} \\
+&dB_{x}=dB\cdot\cos\alpha \\
+&dB=\frac{\mu_{0}}{4\pi}\frac{ids}{r^{2}}\sin\theta \\
+&\theta=\frac{\pi}{2}, \sin\theta=1, r=r_{0}/\sin\alpha \\
+&B_{x}=\int dB\cos\alpha \\
+&B=\frac{\mu_{0}i}{4\pi}\oint\frac{\sin^{2}\alpha}{r_{0}^{2}}\cos\alpha ds\\&=\frac{\mu_{0}i}{4\pi r_{0}^{2}}\sin^{2}\alpha\cos\alpha\cdot2\pi R\\
+&B=\frac{\mu_0}{2} \frac{iR^2}{(R^2+r_0^2)^{\frac{3}{2}}}\xrightarrow{r_0=0}B=\frac{\mu_0 i}{2R}\\\ &\xrightarrow {r_0>>R} B=\frac{\mu_0 i R^2}{2r_0^3}
+\end{aligned}
+$$
+we can define magnetic dipole moment $\mu$
+$$
+B=\frac{\mu_0iR^2}{2r_0^3}=\frac{\mu_0i\pi R^2}{2\pi r_0^3}=\frac{\mu_0iA}{2\pi r_0^3}\\\begin{aligned}&\text{Define: }\mu=iA=i\pi R^2\\&B=\frac{\mu_{0}}{2}\frac{iR^{2}}{r_{0}^{3}}=\frac{\mu_{0}}{2\pi}\frac{i\pi R^{2}}{r_{0}^{3}}=\frac{\mu_{0}}{2\pi}\frac{\mu}{r_{0}^{3}}\end{aligned}
+$$
+:::

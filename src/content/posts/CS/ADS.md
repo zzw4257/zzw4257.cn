@@ -1,5 +1,5 @@
 ---
-title: ZJU ADS 速通 all in one
+title: ZJU ADS DS Part
 published: 2024-10-08
 description: 写一个集成度高一点的省流笔记～
 tags: [note,ads,CS]
@@ -858,9 +858,9 @@ Decresed key
 ## 主定理
 
 [^ref1]: 单次插入的复杂度为 $O(\log n)$，但有 $k$ 次连续插入时，可创建一个只包含要插入元素的二项堆，再将此堆与原先的二项堆进行合并，均摊复杂度为 $O(1)$
-    
+
 [^ref2]: 可以保存一个指向最小元素的指针，在执行其他操作时修改该指针，即可在 $O(1)$ 的复杂度下进行查询了
-    
+
 [^ref3]: 复杂度为均摊复杂度
-    
+
 [^ref4]: 表格来自于 [Wikipedia](https://en.wikipedia.org/wiki/Priority_queue#Summary_of_running_times)

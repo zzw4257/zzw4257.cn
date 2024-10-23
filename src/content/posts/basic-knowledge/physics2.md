@@ -1439,8 +1439,152 @@ $$
 &B=\frac{\mu_0}{2} \frac{iR^2}{(R^2+r_0^2)^{\frac{3}{2}}}\xrightarrow{r_0=0}B=\frac{\mu_0 i}{2R}\\\ &\xrightarrow {r_0>>R} B=\frac{\mu_0 i R^2}{2r_0^3}
 \end{aligned}
 $$
-we can define magnetic dipole moment $\mu$
+we can define magnetic dipole moment $\mu$ (just like $\vec p=  q\vec l$)
 $$
-B=\frac{\mu_0iR^2}{2r_0^3}=\frac{\mu_0i\pi R^2}{2\pi r_0^3}=\frac{\mu_0iA}{2\pi r_0^3}\\\begin{aligned}&\text{Define: }\mu=iA=i\pi R^2\\&B=\frac{\mu_{0}}{2}\frac{iR^{2}}{r_{0}^{3}}=\frac{\mu_{0}}{2\pi}\frac{i\pi R^{2}}{r_{0}^{3}}=\frac{\mu_{0}}{2\pi}\frac{\mu}{r_{0}^{3}}\end{aligned}
+B=\frac{\mu_0iR^2}{2r_0^3}=\frac{\mu_0i\pi R^2}{2\pi r_0^3}=\frac{\mu_0iA}{2\pi r_0^3}\\\begin{aligned}&\text{Define: }\mu=iA=i\pi R^2(\vec \mu =i\vec A)\\&B=\frac{\mu_{0}}{2}\frac{iR^{2}}{r_{0}^{3}}=\frac{\mu_{0}}{2\pi}\frac{i\pi R^{2}}{r_{0}^{3}}=\frac{\mu_{0}}{2\pi}\frac{\mu}{r_{0}^{3}}\end{aligned}
 $$
 :::
+
+![image-20241023110346439](/pic/phy2/B_circ.png)
+
+:::note[p757 sample33-5]
+
+![image-20241023110610077](/pic/eg757.png)
+$$ {\frac{}{}}
+\mathrm d B=\frac{\mu _0 di}{2\pi d}=\frac{\mu _0 \frac{i}{a} dx}{2\pi d}\\
+d=\frac{R}{\cos \theta }\Rightarrow B_x=\int dB\cos \theta=\frac{\mu_0i}{2\pi a R}\int \cos^2\theta dx
+$$
+then 
+
+$dx=\mathrm d (R\tan \theta)=R\frac{\mathrm d}{\cos^2\theta }$
+$$
+B_x=\frac{\mu_0 i}{2\pi a}\int_{-\theta}^{\theta}d\theta =\frac{\mu _0 i}{\pi a}\alpha =\frac{\mu_0 i}{\pi a}\arctan \frac{a}{2R}
+$$
+$R>>a:(\alpha \to \tan \alpha)B=\frac{\mu_0 i}{2\pi R}$
+
+$R\to 0,B=\frac{\mu_0i}{2a}$​
+
+:::note[**Bohr model of the hydrogen atom**]
+$$
+\begin{aligned}&a_0=0.529A=5.29\times10^{-11}m\\&\nu=6.63\times10^{15}Hz\\&i=e\nu=1.60\times10^{-19}\times6.63\times10^{15}=1.63\times10^{-3}A\\&B=\frac{\mu_0i}{2R}=\frac{4\pi\times10^{-7}\times1.06\times10^{-3}}{2\times5.29\times10^{-11}}=12.6T\\&\mu_\mathrm{B}=iA=1.63\times10^{-3}\times\pi\times(5.29\times10^{-11})^2\\&=0.923\times10^{-23}A\cdot m^2\end{aligned}
+$$
+called as Bohr Magnon
+
+:::
+
+### B of Solenoid
+
+:::tip[Solenoid]
+
+A constant magnetic field can (in principle) be produced by an $\infty$​ sheet of current. In practice, however, a constant magnetic field is often produced by a solenoid. 
+
+Parameters:$i,n,R,L$,we assume $R<<L$
+
+:::
+
+![image-20241023112023529](/pic/phy2/B_solenoid.png)
+
+for a circular loop 
+$$
+B=\frac{\mu_0}{2}\frac{iR^2}{\left(R^2+r_0^2\right)^{3/2}}
+$$
+
+$$
+\begin{aligned}
+&dB=\frac{\mu_{0}}{2}\frac{R^{2}indl}{\left[R^{2}+(x-l)^{2}\right]^{3/2}} \\
+&B=\frac{\mu_{0}}{2}\int_{-L/2}^{L/2}\frac{R^{2}indl}{\left[R^{2}+\left(x-l\right)^{2}\right]^{3/2}} \\
+&r={\sqrt{R^{2}+\left(x-l\right)^{2}}}={\frac{R}{\sin\beta}} \\
+&\frac{x-l}{R}=ctg\beta\Rightarrow dl=\frac{R}{\sin^{2}\beta}d\beta 
+\end{aligned}
+$$
+
+then
+$$
+\begin{aligned}
+&B=\frac{\mu_{0}}{2}\int_{\beta_{1}}^{\beta_{2}}\frac{R^{2}ni\frac{R}{\sin^{2}\beta}d\beta}{(\frac{R^{2}}{\sin^{2}\beta})^{3/2}} \\
+&=\frac{\mu_{0}}{2}\cdot ni\int_{\beta_{1}}^{\beta_{2}}\sin\beta d\beta \\
+&=\frac12 \mu_{0}ni(\cos\beta_{1}-\cos\beta_{2})
+\end{aligned}
+$$
+use
+$$
+\cos\beta_{1}=\frac{x+L/2}{\sqrt{R^{2}+\left(x+L/2\right)^{2}}}\\\cos\beta_{2}=\frac{x-L/2}{\sqrt{R^{2}+\left(x-L/2\right)^{2}}}
+$$
+with
+
+- $L\to \infty ,\beta _1=0,\beta_2=\pi$
+
+  $B=\frac{1}{2}\mu _0ni(1+1)=\mu_0ni$
+
+- $\beta _1=0,\beta_2=\frac{\pi}{2}$
+
+  $B=\frac{1}{2}\mu_0 n i(1-0)=\frac{1}{2}\mu_0 ni$
+
+![image-20241023112523551](/pic/B_outside_solenoid.png)
+
+The field outside the ideal solenoid is zero.
+
+:::note[eg:multi-layers solenoid]
+
+![image-20241023112648636](/pic/phy2/B_multilayers.png)
+$$
+B=\frac12 \mu_{0}ni(\cos\beta_{1}-\cos\beta_{2})
+$$
+With this
+$$
+\begin{aligned}&ni=\frac{Ni}{L}\Rightarrow\frac{jLdr}{L}=jdr=\frac{Ni}{2l(R_{2}-R_{1})} dr\\&\cos\beta_{2}=-\cos\beta_{1},\cos\beta_{1}=\frac{l}{\sqrt{l^{2}+r^{2}}}\end{aligned}
+$$
+
+$$
+\begin{aligned}
+&dB=\frac{1}{2} \mu_{0} \frac{Ni}{2l(R_{2}-R_{1})}\cdot\frac{2l}{\sqrt{l^{2}+r^{2}}} dr \\
+&B=\mu_{0}jl\int_{R_{1}}^{R_{2}}\frac{dr}{\sqrt{l^{2}+r^{2}}} \\
+&=\mu_{0}jl\ln\frac{R_{2}+\sqrt{R_{2}^{2}+l^{2}}}{R_{1}+\sqrt{R_{1}^{2}+l^{2}}}
+\end{aligned}
+$$
+in practice
+
+we define $\gamma=\frac{l}{R_1},\alpha =\frac{R_2}{R_1}$
+$$
+B_0=\mu_0hR_1\gamma \ln \frac{\alpha +\sqrt {\alpha^2+\gamma^2}}{1+\sqrt{1+\gamma^2}}
+$$
+:::
+
+## 32-3 Gauss Law and Ampere's Loop Law for B
+
+let's first review
+
+for $\vec E$
+
+- Gauss law:
+  $$
+  \oint\vec{E}\bullet d\vec{A}=\frac1{\varepsilon_0}\sum q, \nabla\bullet\vec{E}=\frac{\rho_e}{\varepsilon_0}
+  $$
+
+- Loop law
+  $$
+  \oint \vec E\bullet d\vec l =0,\nabla \times \vec E=0(\vec E=-\nabla V)
+  $$
+
+$$
+\Phi_B=\iint\vec{B}\bullet d\vec{A}=\iint B\cos\theta dA(Unit :T\cdot m^2=Wb)
+$$
+
+for $\vec B$
+
+- Gauss law:
+  $$
+  \oint\vec{B}\bullet d\vec{A}=0, \nabla\bullet\vec{E}=0
+  $$
+
+- Loop law
+  $$
+  \oint \vec B\bullet d\vec l =0,\nabla \times \vec E=0(\vec E=-\nabla V)
+  $$
+
+
+
+
+
+
+

@@ -5,13 +5,11 @@ description: 这是灰烬中的余生～
 tags: [note,ads,CS]
 category: CS
 draft: false
-
 ---
-
 # *课程框架树
 
-- Advanced DS 
-  - Search 
+- Advanced DS
+  - Search
     - AVL
     - RB
     - B+
@@ -44,12 +42,13 @@ draft: false
 
 :::note[补充定义]
 
-- $S_i$为$i$​步的可选域
+- $S_i$为$i$步的可选域
 - game tree 又叫决策树
 
 :::
 
 :::tip[例一:八皇后]
+
 $$
 S_i\{1\cdots 8\}\\
 x_i\neq x_j(i\neq j)\\
@@ -104,10 +103,12 @@ Q . . . . . . .
 另外一个例子的**阶段**设计则没有那么显然
 
 :::note[eg2. Turnpike Reconstruction]
+
 $$
 S_1=[1,n]
 \\S_{i-1} =S_i-\{l_i\}\vee S_{i-1}=S_i-\{r_i\}\\
 $$
+
 每个阶段的决策并不好用变量来写
 
 具体而言我们考虑用递归的方式定义这个过程
@@ -123,7 +124,6 @@ $\mathrm{Reconstruction}(X,D,N,l,r)$
 ### Alpha-Beta prunning
 
 - **Minmax Strategy**:以tic-tac-toe为例，A与B分别持有最大化/，最小化某一收益的前提目标，则我们可以对game tree奇偶分层分别实现最值
-
 - **Alpha-Beta punning**:基于该想法卡上下界（开始进入有奇偶两种），可以在实践中缩减规模到$\mathcal O(\sqrt N)$的效率($N$表示搜索树整体节点数)
 
 ## Divide and Conquer

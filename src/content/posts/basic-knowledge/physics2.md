@@ -1574,17 +1574,224 @@ for $\vec B$
 
 - Gauss law:
   $$
-  \oint\vec{B}\bullet d\vec{A}=0, \nabla\bullet\vec{E}=0
+  \oint\vec{B}\bullet d\vec{A}=0, \nabla\bullet\vec{B}=0
   $$
 
 - Loop law
   $$
-  \oint \vec B\bullet d\vec l =0,\nabla \times \vec E=0(\vec E=-\nabla V)
+  \oint \vec B\bullet d\vec l =\mu _0\sum i,\nabla \times \vec B=\mu_0\vec J
   $$
+  
+- 
+
+:::note[fact...]
+$$
+\oint \vec B\mathrm d \vec l =\mu_0\sum i+\mu_0\varepsilon_0\frac{\mathrm d}{\mathrm dt}\int _S\vec E\mathrm d \vec S
+$$
+The differential form is 
+$$
+\nabla \times \vec B =\mu_0\vec J+\mu_0\varepsilon _0\frac{\partial \vec E}{\partial t}
+$$
+:::
 
 
 
+![image-20241030100813902](/pic/phy2/B-Ampere.png)
 
+$$
+\oint \vec B\cdot \mathrm d\vec l=\mu_0(i_1+i_3-2i_2)
+$$
+:::note[egs]
 
+[e.g.1]
 
+> inf long wire $R$,i uniform distribution 
 
+$$
+B\cdot 2\pi r=\mu_0i\cdot \frac{r^2}{\pi R^2}\Rightarrow B=\frac{\mu_0 i r}{2\pi R^2}(r<R)\propto r
+$$
+
+$$
+B\cdot 2\pi r=\mu_0i\Rightarrow B=\frac{\mu_0 i }{2\pi r}(r>R)\propto \frac{1}{r}
+$$
+
+[e.g.2]
+
+> Consider an $\infty$​ sheet of current described by n wires/length each carrying current i **into** the screen as shown. Calculate the B field.
+
+for symmetry:vertical direction on the screen
+
+we catch a w*w square
+$$
+\oint \vec B \bullet \mathrm d\vec  l=2Bw=\mu_0 n w i\Rightarrow B=\frac{1}{2}\mu_0 ni
+$$
+[e.g.3]
+
+> calculate B for $\infty $​ solenoid 
+
+view it as two sheets
+$$
+\oint \vec B\bullet \mathrm d \vec l =Bw=\mu _0 n w i\Rightarrow B=\mu_0 ni
+$$
+[e.g.4]
+
+> the B of Toroid ($N$ total turns with current i)
+
+![image-20241030102530083](/pic/Toroid.png)
+$$
+\oint \vec B\bullet \mathrm d \vec l=B2\pi r=\mu_0Ni\to B=\mu _0ni(n=\frac{N}{2\pi r})
+$$
+:::
+
+::: tip[Application]
+
+- Power door locks
+
+- Magnetic cranes
+
+- Electronic Switch “relay
+
+:::
+
+## 32-4 The magnetic force on a carrying-current wire
+
+remember
+$$
+\mathrm d \vec F=i\mathrm d\vec s\times \vec B(\mathrm d \vec F_{2} =i_2\mathrm d\vec s_2\times \left(\oint _{L_1}\frac{i_1\mathrm d \vec s_1 \times \hat r_{12}}{r^2_{12}}\right))
+$$
+:::note[EG32-5,P738]
+
+![image-20241030103224866](/pic/eg738.png)
+$$
+F_{2}=F_{\perp}=\int_{0}^{\pi}iBR\mathrm d \theta \sin\theta=2iBR
+$$
+
+$$
+F=F_1+F_2+F_3=iB(2L+2R)
+$$
+
+:::
+
+for two parallel conductors
+
+![image-20241030103700752](/pic/phy2/B-two-par.png)
+$$
+f=\frac{\mu_0i_1i_2}{2\pi d}\xRightarrow{i_1=i_2=i}i\sqrt{\frac{fd}{\frac{\mu_0}{2\pi}}}
+$$
+we define $i=1A$ to be the current that make two $1m$ apart parallel conductors have force density $2\times 10^{-7}N/m$ 
+
+ for convenience sake, we define $\hat n$ the unit normal vector of current loop
+$$
+\vec \mu =iA\hat n\\\vec \tau=\vec \mu\times \vec B 
+$$
+this holds for arbitrary shape loop
+
+![image-20241030104543971](/pic/phy2/torque-shape.png)
+$$
+\begin{aligned}&dF_{1}=ids_{1}B\sin \theta _1\\&dF_2=ids_2 B\sin \theta _2\\&dF_1=dF_2=iBdh\\&d\tau =dF_1x_1+dF_2x_2=iBdA\end{aligned}
+$$
+for magnetic dipole
+
+we define $\vec \tau=iA(\vec n \times \vec B)$
+
+then
+$$
+U_p=-\int_{\infty}^{p} \tau \cdot d\vec \theta =\int \mu  B \sin \theta d\theta=\mu B \cos \theta =\vec \mu \bullet \vec B\Rightarrow U=-\mu \bullet \vec B
+$$
+remind that
+$$
+\vec p=q\vec d
+$$
+
+$$
+\vec \tau =\vec p\times \vec E
+$$
+
+$$
+U=-\vec p\bullet \vec E
+$$
+
+we have
+$$
+\mu =A\vec i
+$$
+
+$$
+\vec \tau =\vec \mu \times \vec B
+$$
+
+$$
+U=-\vec \mu \bullet \vec B 
+$$
+
+![image-20241030105437447](/pic/phy2/potential-energy-of-dipole.png)
+
+| System               | μ(J/T)     |
+| -------------------- | ---------- |
+| Nucleus of N atom    | 2.0x10^-28 |
+| Proton               | 1.4x10^-26 |
+| Electron             | 9.3x10^-24 |
+| N atom               | 2.8x10^-23 |
+| Typical small coil   | 5.4x10^-6  |
+| Small bar magnet     | 5.0        |
+| Superconducting coil | 400        |
+| The Earth            | 8.0x10^22  |
+
+:::important[MRI (Magnetic Resonance Imaging)]
+
+**Proton Spin and Magnetic Moment:**
+
+- A single proton possesses a positive charge $ +|e| $ and an intrinsic angular momentum, known as "spin."
+- Naively imagining the charge circulating in a loop gives rise to a magnetic dipole moment $ \mu $.
+
+**Behavior in an External Magnetic Field \( B \):**
+
+- **Classically:** Torques will be present unless the magnetic moment $\vec{\mu} $ is aligned with or against the magnetic field \( B \).
+- **Quantum Mechanics (QM):** The spin is always aligned either with or against the magnetic field \( B \).
+
+  - **Anti-aligned State:** Energy $ U_2 = \mu B $
+  - **Aligned State:** Energy $ U_1 = -\mu B $
+
+- **Energy Difference:** $ \Delta U = U_2 - U_1 = 2\mu B $
+
+> $$
+> \begin{aligned}&\mu_{proton}=1.36\times10^{-26}\mathrm{~A~m}^2\quad B=1\text{ Tesla }(=10^4\mathrm{~Gauss})\\&\Delta U=2\mu B=2.7\times10^{-26}\mathrm{J}\end{aligned}
+> $$
+>
+> $h\nu =\Delta U\Rightarrow \nu=\frac{2.7\times 10^{-26}}{6.6\times 10^{-34}Js}=41\mathrm{MHz}$
+
+:::
+
+more applications
+
+:::note[app:Galvanometers ]
+
+![image-20241030110554772](/pic/galvanometers.png)
+
+1. **Magnetic Force on a Current Loop:**
+   - When a loop of wire carrying an electric current is placed in a magnetic field, the field exerts a torque on the loop, attempting to align the loop's magnetic dipole moment with the field.
+2. **Structure of a Galvanometer:**
+   - Inside a galvanometer, there is a rotating coil attached to a pivot.
+   - To return the pointer to its equilibrium position, a spring is included in the galvanometer, which creates a torque in the opposite direction to the rotation of the coil.
+
+:::
+
+motor is almost the same ,we just skip it
+
+- fixed voltage:DC motors
+- fixed current:AC motors
+
+## 32-5 The motion of a charge in a magnetic field
+
+we define Lorentz Force as
+$$
+\begin{align*}
+\vec F &=q\vec v\times \vec B\\
+F&=qvB\sin \theta
+\end{align*}
+$$
+we can find that 
+$$
+\begin{align*}
+\end{align*}
+$$

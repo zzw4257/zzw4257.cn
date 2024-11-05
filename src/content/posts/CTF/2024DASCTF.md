@@ -1,7 +1,7 @@
 ```
-title: 2024-AAA-CTF 记录+补题
-published: 2024-10-16
-description: 人生中第一次CTF
+title: DASCTF2024
+published: 2024-11-5
+description: 一次单人三排的CTF
 tags: [contest,CTF]
 category: CTF
 draft: true

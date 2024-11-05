@@ -55,49 +55,6 @@ x_i\neq x_j(i\neq j)\\
 \left|\frac{(x_i-x_j)}{(i-j)}\right|\neq 1(i\neq j)
 $$
 
-```
-Solution 1:
-Q . . . . . . .
-. . . . . . Q .
-. . . . Q . . .
-. . . . . . . Q
-. Q . . . . . .
-. . . Q . . . .
-. . . . . Q . .
-. . Q . . . . .
-
-Solution 2:
-Q . . . . . . .
-. . . . . . Q .
-. . . Q . . . .
-. . . . . Q . .
-. . . . . . . Q
-. Q . . . . . .
-. . . . Q . . .
-. . Q . . . . .
-
-Solution 3:
-Q . . . . . . .
-. . . . . Q . .
-. . . . . . . Q
-. . Q . . . . .
-. . . . . . Q .
-. . . Q . . . .
-. Q . . . . . .
-. . . . Q . . .
-
-Solution 4:
-Q . . . . . . .
-. . . . Q . . .
-. . . . . . . Q
-. . . . . Q . .
-. . Q . . . . .
-. . . . . . Q .
-. Q . . . . . .
-. . . Q . . . .
-(...)
-```
-
 :::
 
 另外一个例子的**阶段**设计则没有那么显然
@@ -199,55 +156,202 @@ $$
 
 
 
+### Master Method 
 
-### Master Method
+### Form1
+
+:::important[Form 1]
 
 对于形如$T(N)=aT(N/b)+f(N)$的递推式：
 1.若$f(N)=O(N^{(\log_ba)-\varepsilon})$, for $\varepsilon>0$,那么$T(N)=\Theta(N^{\log_ba});$
 2.若$f(N)=\Theta(N^{\log_ba})$,那么$T(N)=\Theta(N^{\log_ba}\log N);$
-3.若$f(N)=\Omega(N^{(\log_ba)+\varepsilon})$, for $\varepsilon>0$且$af(\frac Nb)<cf(N)$, for $c<1$ and $\forall N>N_0$,那么$T(N)=\Theta(f(N));$
+3.若$f(N)=\Omega(N^{(\log_ba)+\varepsilon})$, for $\varepsilon>0$且$af(\frac Nb)<cf(N)$, for $c<1$ and $\forall N>N_0$,那么$T(N)=\Theta(f(N))$ `regularity condition`	
+
+:::
 
 :::tip[注意]
 
 - Merge sort
   - $a=b=2$,case2, $T(N)=\mathcal O(N\log N)$
-- $a=b=2,f(N)=N\log N$
-  - 这个主定理没给出所有情况，且有间隙
+- $a=b=2,f(N)=N\log ⁡N$；
+  - $f(N)=N\log ⁡N$，虽然 $N\log ⁡N=\Theta(N^{log_⁡{2}2})$，但是 $N\log⁡ N\not=\Theta(N^{\log⁡_2 2−\epsilon})$，所以不适用于情况 3；
+  - 具体来说，$\lim\limits_{⁡N\rightarrow\infty}\frac{N\log ⁡N}{N^{1+\epsilon}}=\lim\limits_{⁡N\rightarrow\infty}\frac{\log ⁡N}{N^\epsilon}=0\text{ for fixed }\epsilon>0$；
+  - 这个例子体现出了 $\epsilon$ 的一定作用；
 
 :::
 
-### Proof
+对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式，我们需要依次证明，此处我们使用递归树法进行证明。
 
-#### Case1
+:::note[Case 1]
+$$
+	T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
+$$
+​	而我们有条件 $f(N)=O(N^{\log_{b}a−\epsilon}),\text{ for }\epsilon>0$，将它代入到上式中得到：              
+$$
+	\begin{aligned}
+	T(N)&=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jO((\frac{N}{b^j})^{\log_{b}a-\epsilon})\\
+	&=\Theta(N^{\log_{b}a})+O(N^{\log_{b}a−\epsilon}×\sum\limits_{j=0}^{\log_{b}N−1}(\frac{a}{b^{\log_{b}a−\epsilon}})^j)\\
+	&=\Theta(N^{\log_{b}a})+O(N^{\log_{b}a−\epsilon}×\sum\limits_{j=0}^{\log_{b}N−1}(b^\epsilon)^j)\\
+	&=\Theta(N^{\log_{b}a})+O(N^{\log_{b}a−\epsilon}×\frac{1×(1−(b^\epsilon)^{\log_{b}N})}{1−b^\epsilon})\\
+	&=\Theta(N^{\log_{b}a})+O(N^{\log_{b}a−\epsilon}×\frac{N^\epsilon-1}{b^\epsilon−1})\\
+	&=\Theta(N^{\log_{b}a})+O(N^{\log_{b}a−\epsilon}×N^\epsilon)\\
+	&=\Theta(N^{\log_{b}a})+O(N^{\log_{b}a})\\
+	&=\Theta(N^{\log_{b}a})
+	\end{aligned}
+$$
+​	证毕
+:::
 
-> $f(N)=\mathcal O(N^{\log_ba-\varepsilon})$, 那么$T(N)=\Theta(N^{\log_ba});$
+:::note[Case 2]
+$$
+T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
+$$
 
-#### Case2
+而我们有条件 $f(N)=\Theta(N^{\log_{⁡b}a})$，将它代入到上式中得到：
 
-> $f(N)=\mathcal(N^{\log_ba})$, 那么$T(N)=\Theta(N^{\log_ba}\log N);$
+$$
+\begin{aligned}
+T(N)&=\Theta(N^{\log_{⁡b}a})+\sum\limits_{j=0}^{\log⁡_{b}N−1}a^j\Theta((\frac{N}{b^j})^{\log⁡_{b}a})\\
+&=\Theta(N^{\log_{⁡b}a})+\Theta(N^{\log_{b}a}×\sum\limits_{j=0}^{\log_{⁡b}N−1}(\frac{a}{b^{\log_{b}a}})^j)\\
+&=\Theta(N^{\log_{⁡b}a})+\Theta(N^{\log_{b}a}×\log_{⁡b}N)\\
+&=Θ(N^{\log_{⁡b}a}\log⁡N)
+\end{aligned}
+$$
 
- 证明：前面的部分和情况一的类似，我们通过相同的步骤得到相同的求和式：
+证毕
 
-$$T(N)=\Theta(N^{\log_ba})+\sum_{j=0}^{(\log_bN)-1}a^jf(\frac N{b^j})$$
+:::
 
-而我们有条件$f(N)=\Theta(N^{\log_ba})$,将它代入到上式中得到：
+:::note[Case 3]
+$$
+T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
+$$
 
-$$\begin{aligned}T(N)&=\Theta(N^{\log_ba})+\sum_{j=0}^{(\log_bN)-1}a^j\Theta\left(\left(\frac N{b^j}\right)^{\log_ba}\right)\\&=\Theta(N^{\log_ba})+\Theta\left(N^{\log_ba}\times\sum_{j=0}^{(\log_bN)-1}\left(\frac a{b^{\log_ba}}\right)^j\right)\\&=\Theta(N^{\log_ba})+\Theta\left(N^{\log_ba}\times\log_bN\right)\\&=\Theta(N^{\log_ba}\log N)\end{aligned}$$
+接下来的步骤和之前不同。在继续之前，我们首先观察不等式 $af(\frac{N}{b})<cf(N)$，在我们的求和式中，我们观察到我们有大量的形如 $a^jf(\frac{N}{b^j})$ 的项，而这些项都可以通过迭代上面那个不等式来实现，即：
 
-至此，情况二证明完毕。
+$$
+a^jf(\frac{N}{b^j})<c×a^{j−1}f(\frac{N}{b^{j−1}})<...<c^jf(N)
+$$
 
-#### Case3
+将这个不等式应用于求和式中，我们能够得到：
 
-> $f(N)=$
+$$
+\begin{aligned}
+T(N)&<\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}c^jf(N)\\
+&=\Theta(N^{\log_{b}a})+f(N)\sum\limits_{j=0}^{\log_{b}N-1}c^j\\
+&=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-c^{\log_{b}N}}{1-c}\\
+&=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-N^{\log_{b}c}}{1-c}
+\end{aligned}
+$$
 
-![image-20241029153231920](assets/image-20241029153231920.png)
+而由于 $c<1$，所以 $\log_{⁡b}c<0$；而 $N>0$，而且一般非常大，所以 $N\log_{⁡b}c\in(0,1)$。因此，对于确定的常数 $c$，我们有 $\frac{1−N^{\log_{⁡b}c}}{1−c}\in(0,\frac{1}{1−c})$；
 
-### Form2
+因此，上式便能改变为：
 
+$$
+\begin{aligned}
+T(N)&<\Theta(N^{\log_{b}a})+f(N)\times\frac{1-N^{\log_{b}c}}{1-c}\\
+&<\Theta(N^{\log_{b}a})+f(N)\times\frac{1}{1-c}
+\end{aligned}
+$$
 
+并且，由于 $f(N)=\Omega(N^{\log_{⁡b}a+\epsilon}),\text{ for }\epsilon>0$，所以可以得到 $c_2N^{\log_{⁡b}a+\epsilon}<f(N)\Rightarrow N^{\log_{b}a}<\frac{1}{c_2N^\epsilon}f(N)$，因此 $T(N)<\Theta(N^{\log_{b}a})+f(N)\times\frac{1}{1-c}<c_1N^{\log_{b}a}+f(N)\times\frac{1}{1-c}<(\frac{c_1}{c_2N^\epsilon}+\frac{1}{1-c})f(N)=O(f(N))$
 
-### Form3 Best?
-$\textbf{where }a\geq 1, b> 1$, and $p\geq0$ is
+而我们知道，要证明 $T(N)=\Theta(f(N))$ 还需要证明 $T(N)=\Omega(f(N))$：
 
->$$\begin{gathered}T(N)=\begin{cases}\:O(N^{\log_ba})&\mathrm{if~}a>b^k\\\:O(N^k\log^{p+1}N)&\mathrm{if~}a=b^k\\\:O(N^k\log^pN)&\mathrm{if~}a<b^k\end{cases}\end{gathered}$$
+$$
+T(N)=Θ(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N−1}a^jf(\frac{N}{b^j})
+\geq\sum\limits_{j=0}^{\log_{b}N−1}a^jf(\frac{N}{b^j})\geq f(N)
+$$
 
+由此得到 $T(N)=\Omega(f(N))$，最终证得 $T(N)=\Theta(f(N))$，至此证毕。
+
+:::
+
+### Form 2
+
+:::important[Form 2]
+
+对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式：
+
+1. 若 $af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa <1$，那么 $T(N)=\Theta(f(N))$；
+2. 若 $af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa >1$，那么 $T(N)=\Theta(N^{\log_{⁡b}a})=\Theta(a^{\log_{⁡b}N})$；
+3. 若 $af(\frac{N}{b})=f(N)$，那么 $T(N)=\Theta(f(N)log_{⁡b}N)$；
+
+:::
+
+对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式，基于线性关系的形式二的证明实际上和形式一的第三种情况的证明非常相像。
+
+假设我们有 $af(\frac{N}{b})=cf(N)$，只需要讨论 c 的取值范围对结果的影响，就可以一次性得到结果。
+
+类似于形式一的第三种情况的证明，我们迭代该关系式，得到关系：
+
+$$
+a^jf(\frac{N}{b^j})=c^jf(N)
+$$
+
+于是，我们有：
+
+$$
+\begin{aligned}
+T(N)&<\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}c^jf(N)\\
+&=\Theta(N^{\log_{b}a})+f(N)\sum\limits_{j=0}^{\log_{b}N-1}c^j\\
+&=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-c^{\log_{b}N}}{1-c}\\
+&=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-N^{\log_{b}c}}{1-c}
+\end{aligned}
+$$
+
+我们现在并不像 Form 1 有显式的 $f(N)=\Omega(N^{\log_{⁡b}a+\epsilon})$ 的条件，而这个条件最终决定 conquer 部分和 combine 部分谁占主导地位。但是，我们实际上只需要得到 $f(N) = \Omega(N^{\log_{⁡b}a})$ 就够了。其实 $af(\frac{N}{b})∼cf(N)$ 这件事本身就暗含了它与 $N^{\log_{⁡b}a}$ 的关系：
+
+$$
+cf(N)∼af(\frac{N}{b})∼...∼a^Lf(\frac{N}{b^L})
+$$
+
+可以发现，这一步还是和 Form 1 的第三种情况的证明过程高度相似。只不过现在我们要更进一步地看这个式子。
+
+当 $c<1$ 时，实际上有 $f(N)>af(\frac{N}{b})$；当 $c=1$ 时，实际上有 $f(N)=af(\frac{N}{b})$；当 $c>1$ 时，实际上有 $f(N)<af(\frac{N}{b})$；
+
+我们假设 $\frac{N}{b^L}$ 足够小（即递归到最末端，只需要进行 conquer 的时候），即 $\frac{N}{b^L}=\Theta(1)$，那么就有 $L=\Theta(\log_{⁡b}N)$。于是，我们有：
+
+$$
+f(N)∼Θ(a^{\log_{⁡b}N})=Θ(N^{\log_{⁡b}a})
+$$
+
+剩下的证明就跟 Form 1 的第三种情况一致
+
+#### Form 3
+
+:::important[Form 3]
+
+当递推关系满足：
+
+$$
+T(N)=aT(\frac{N}{b})+\Theta(N^k\log^{p}N)\text{ Where }a\geq 1,b>1,p\geq 0
+$$
+
+其复杂度有结论：
+
+$$
+T(N)=
+\begin{cases}
+O(N^{\log_{⁡b}a}),a>b^k\\
+O(N^k\log⁡^{p+1}N),a=b^k\\
+O(N^k\log^{p}N),a<b^k
+\end{cases}
+$$
+:::
+
+#### Form4(re-Form3)
+
+(Chap4.5 4.1Master Method)
+
+:::important[Form4]
+
+对于形如$T(N)=aT(N/b)+f(N)$的递推式：
+1.若$f(N)=O(N^{(\log_ba)-\varepsilon})$, for $\varepsilon>0$,那么$T(N)=\Theta(N^{\log_ba});$
+2.若$f(N)=\Theta(N^{\log_ba}\log^k N)$,那么$T(N)=\Theta(N^{\log_ba}\log^{k+1} N);$
+3.若$f(N)=\Omega(N^{(\log_ba)+\varepsilon})$, for $\varepsilon>0$且$af(\frac Nb)<cf(N)$, for $c<1$ and $\forall N>N_0$,那么$T(N)=\Theta(f(N))$ `regularity condition`	
+
+:::
+
+实际上就是Form3的重述

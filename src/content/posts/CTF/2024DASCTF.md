@@ -1,12 +1,11 @@
-```
+---
 title: DASCTF2024
-published: 2024-11-5
+published: 2024-11-05
 description: 一次单人三排的CTF
 tags: [contest,CTF]
 category: CTF
 draft: true
-```
-
+---
 # 11.2 CTF省赛 Writeup
 
 ```

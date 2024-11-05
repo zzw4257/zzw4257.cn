@@ -1,11 +1,11 @@
-```
+---
 title: 速刷练习
-published: 2024-11-5
+published: 2024-11-05
 description: 一次单人三排的CTF
 tags: [contest,CTF]
 category: CTF
 draft: true
-```
+---
 
 # CTF速刷学习
 
@@ -42,6 +42,7 @@ draft: true
 >   ```
 >
 >   例如，将 `hello.txt`隐藏到 `hello.jpg`中：
+>
 >   ```
 >   steghide --embed -ef hello.txt -cf hello.jpg
 >   ```
@@ -52,6 +53,7 @@ draft: true
 >   ```
 >
 >   例如，从 `hello.jpg`中提取隐藏的文件：
+>
 >   ```
 >   steghide --extract -sf hello.jpg
 >   ```

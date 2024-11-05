@@ -1,3 +1,12 @@
+```
+title: linux汇总
+published: 2024-11-5
+description: 一次单人三排的CTF
+tags: [contest,CTF]
+category: CTF
+draft: true
+```
+
 # 9.1 更多 Linux 工具
 
 - [dd](https://firmianay.gitbook.io/ctf-all-in-one/9_appendix/9.1_linuxtools#dd)

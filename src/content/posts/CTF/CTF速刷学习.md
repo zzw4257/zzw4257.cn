@@ -1,3 +1,12 @@
+```
+title: 速刷练习
+published: 2024-11-5
+description: 一次单人三排的CTF
+tags: [contest,CTF]
+category: CTF
+draft: true
+```
+
 # CTF速刷学习
 
 第一次更新:11.2 为了省赛
@@ -12,159 +21,166 @@
 
 [gregalletti/CTF_tools: List of tools and commands that may be helpful in CTFs](https://github.com/gregalletti/CTF_tools?tab=readme-ov-file)
 
-- websocket 远程连接`websocat -b -E tcp-l:<local url> <url>`
-  - 然后可以在另外一个界面用`nc <local url>`访问
+- websocket 远程连接 `websocat -b -E tcp-l:<local url> <url>`
+
+  - 然后可以在另外一个界面用 `nc <local url>`访问
   - ![image-20241102095452146](assets/image-20241102095452146.png)
-
-
-
 - steghide
 - binwalk
-- stegsolve  
+- stegsolve
 - dd
 - zio
 
->以下是您提到的工具的详细用法：
+> 以下是您提到的工具的详细用法：
 >
->1. **steghide**
->   - **嵌入操作**：将文件隐藏到另一个文件中。
->     ```
->     steghide --embed -ef <要隐藏的文件> -cf <载体文件>
->     ```
->     例如，将`hello.txt`隐藏到`hello.jpg`中：
->     ```
->     steghide --embed -ef hello.txt -cf hello.jpg
->     ```
->   - **提取操作**：从载体文件中提取隐藏的文件。
->     ```
->     steghide --extract -sf <载体文件>
->     ```
->     例如，从`hello.jpg`中提取隐藏的文件：
->     ```
->     steghide --extract -sf hello.jpg
->     ```
->   - **其他选项**：
->     - 使用`-sf`参数指定输入文件，`-xf`参数指定输出文件。
->     - 如果需要密码保护，新版本的steghide会要求设置密码。
+> 1. **steghide**
 >
->2. **binwalk**
->   - **基本用法**：分析文件，识别并提取其中的隐藏文件。
->     ```
->     binwalk <文件名>
->     ```
->   - **提取文件**：自动提取分析结果中的文件。
->     ```
->     binwalk -e <文件名>
->     ```
->   - **签名扫描**：扫描文件中的已知签名。
->     ```
->     binwalk -A <文件名>
->     ```
->   - **自定义提取**：使用自定义配置文件提取文件。
->     ```
->     binwalk --extract=<配置文件> <文件名>
->     ```
->   - **递归提取**：递归提取文件中包含的文件。
->     ```
->     binwalk -Me <文件名>
->     ```
->   - **字符串搜索**：在文件中搜索字符串。
->     ```
->     binwalk --string <文件名>
->     ```
->   - **熵分析**：分析文件的熵信息。
->     ```
->     binwalk -E <文件名>
->     ```
->   - **比较文件**：比较多个文件的差异。
->     ```
->     binwalk -W <文件1> <文件2> ...
->     ```
->   - **更多选项**：可以使用`--help`查看更多选项和用法。
+> - **嵌入操作**：将文件隐藏到另一个文件中。
 >
->3. **stegsolve**
->   - **功能介绍**：
->     - **File Format**：查看图片的具体信息。
->     - **Data Extract**：提取图片的RGB数据。
->     - **Stereogram Solve**：立体图像分析，可以控制左右偏移。
->     - **Frame Browser**：帧浏览器，用于分析GIF等动图。
->     - **Image Combiner**：图片拼接。
->   - **使用场景**：
->     - 使用**File Format**查看图片信息，有时flag会隐藏在其中。
->     - 使用**Data Extract**提取RGB数据。
->     - 使用**Frame Browser**分析动图的每一帧。
->     - 使用**Image Combiner**拼接图片。
+>   ```
+>   steghide --embed -ef <要隐藏的文件> -cf <载体文件>
+>   ```
 >
->4. **dd**
->   - **基本用法**：用于读取、转换并输出数据。
->     ```
->     dd if=<输入文件> of=<输出文件> bs=<块大小>
->     ```
->   - **备份分区**：备份`/dev/sda1`分区到文件。
->     ```
->     dd if=/dev/sda1 of=partition-bkp.img
->     ```
->   - **恢复分区**：从备份文件恢复到另一个分区。
->     ```
->     dd if=partition-bkp.img of=/dev/sdb1
->     ```
->   - **备份整个硬盘**：备份整个`/dev/sda`硬盘。
->     ```
->     dd if=/dev/sda of=disk-bkp.img
->     ```
->   - **恢复整个硬盘**：从备份文件恢复整个硬盘。
->     ```
->     dd if=disk-bkp.img of=/dev/sdb
->     ```
->   - **备份主引导记录**：备份MBR。
->     ```
->     dd if=/dev/sda of=mbr.img bs=512 count=1
->     ```
->   - **更多选项**：可以使用`info dd`或`man dd`查看更多选项和用法。
+>   例如，将 `hello.txt`隐藏到 `hello.jpg`中：
+>   ```
+>   steghide --embed -ef hello.txt -cf hello.jpg
+>   ```
+> - **提取操作**：从载体文件中提取隐藏的文件。
 >
->5. **exiftool**
->   - **读取元数据**：读取文件的EXIF信息。
->     ```
->     exiftool <文件名>
->     ```
->   - **写入元数据**：向文件写入新的元数据。
->     ```
->     exiftool -<标签>=<值> <文件名>
->     ```
->   - **批量处理**：递归处理目录中的所有文件。
->     ```
->     exiftool -r -<标签>=<值> <目录>
->     ```
->   - **删除元数据**：删除文件中的特定元数据。
->     ```
->     exiftool -<标签>= <文件名>
->     ```
->   - **复制元数据**：从一个文件复制元数据到另一个文件。
->     ```
->     exiftool -tagsFromFile<源文件> <目标文件>
->     ```
->   - **更多选项**：可以使用`exiftool -help`查看更多选项和用法。
+>   ```
+>   steghide --extract -sf <载体文件>
+>   ```
 >
->6. **wireshark**
->   - **开始抓包**：选择网卡并开始捕获数据包。
->     ```
->     Wireshark -> Capture -> Options -> 选择网卡 -> Start
->     ```
->   - **过滤数据包**：使用显示过滤器过滤数据包。
->     ```
->     Wireshark -> Display Filter
->     ```
->   - **分析数据包**：查看数据包的详细信息。
->     ```
->     Wireshark -> Packet List Pane -> 选择数据包 -> Packet Details Pane
->     ```
->   - **保存抓包结果**：保存捕获的数据包。
->     ```
->     Wireshark -> File -> Save As
->     ```
->   - **更多选项**：可以使用`Wireshark -> Help -> Wireshark Filters`查看过滤表达式的规则。
+>   例如，从 `hello.jpg`中提取隐藏的文件：
+>   ```
+>   steghide --extract -sf hello.jpg
+>   ```
+> - **其他选项**：
 >
+>   - 使用 `-sf`参数指定输入文件，`-xf`参数指定输出文件。
+>   - 如果需要密码保护，新版本的steghide会要求设置密码。
 >
+> 2. **binwalk**
+>
+> - **基本用法**：分析文件，识别并提取其中的隐藏文件。
+>   ```
+>   binwalk <文件名>
+>   ```
+> - **提取文件**：自动提取分析结果中的文件。
+>   ```
+>   binwalk -e <文件名>
+>   ```
+> - **签名扫描**：扫描文件中的已知签名。
+>   ```
+>   binwalk -A <文件名>
+>   ```
+> - **自定义提取**：使用自定义配置文件提取文件。
+>   ```
+>   binwalk --extract=<配置文件> <文件名>
+>   ```
+> - **递归提取**：递归提取文件中包含的文件。
+>   ```
+>   binwalk -Me <文件名>
+>   ```
+> - **字符串搜索**：在文件中搜索字符串。
+>   ```
+>   binwalk --string <文件名>
+>   ```
+> - **熵分析**：分析文件的熵信息。
+>   ```
+>   binwalk -E <文件名>
+>   ```
+> - **比较文件**：比较多个文件的差异。
+>   ```
+>   binwalk -W <文件1> <文件2> ...
+>   ```
+> - **更多选项**：可以使用 `--help`查看更多选项和用法。
+>
+> 3. **stegsolve**
+>
+> - **功能介绍**：
+>   - **File Format**：查看图片的具体信息。
+>   - **Data Extract**：提取图片的RGB数据。
+>   - **Stereogram Solve**：立体图像分析，可以控制左右偏移。
+>   - **Frame Browser**：帧浏览器，用于分析GIF等动图。
+>   - **Image Combiner**：图片拼接。
+> - **使用场景**：
+>   - 使用**File Format**查看图片信息，有时flag会隐藏在其中。
+>   - 使用**Data Extract**提取RGB数据。
+>   - 使用**Frame Browser**分析动图的每一帧。
+>   - 使用**Image Combiner**拼接图片。
+>
+> 4. **dd**
+>
+> - **基本用法**：用于读取、转换并输出数据。
+>   ```
+>   dd if=<输入文件> of=<输出文件> bs=<块大小>
+>   ```
+> - **备份分区**：备份 `/dev/sda1`分区到文件。
+>   ```
+>   dd if=/dev/sda1 of=partition-bkp.img
+>   ```
+> - **恢复分区**：从备份文件恢复到另一个分区。
+>   ```
+>   dd if=partition-bkp.img of=/dev/sdb1
+>   ```
+> - **备份整个硬盘**：备份整个 `/dev/sda`硬盘。
+>   ```
+>   dd if=/dev/sda of=disk-bkp.img
+>   ```
+> - **恢复整个硬盘**：从备份文件恢复整个硬盘。
+>   ```
+>   dd if=disk-bkp.img of=/dev/sdb
+>   ```
+> - **备份主引导记录**：备份MBR。
+>   ```
+>   dd if=/dev/sda of=mbr.img bs=512 count=1
+>   ```
+> - **更多选项**：可以使用 `info dd`或 `man dd`查看更多选项和用法。
+>
+> 5. **exiftool**
+>
+> - **读取元数据**：读取文件的EXIF信息。
+>   ```
+>   exiftool <文件名>
+>   ```
+> - **写入元数据**：向文件写入新的元数据。
+>   ```
+>   exiftool -<标签>=<值> <文件名>
+>   ```
+> - **批量处理**：递归处理目录中的所有文件。
+>   ```
+>   exiftool -r -<标签>=<值> <目录>
+>   ```
+> - **删除元数据**：删除文件中的特定元数据。
+>   ```
+>   exiftool -<标签>= <文件名>
+>   ```
+> - **复制元数据**：从一个文件复制元数据到另一个文件。
+>   ```
+>   exiftool -tagsFromFile<源文件> <目标文件>
+>   ```
+> - **更多选项**：可以使用 `exiftool -help`查看更多选项和用法。
+>
+> 6. **wireshark**
+>
+> - **开始抓包**：选择网卡并开始捕获数据包。
+>   ```
+>   Wireshark -> Capture -> Options -> 选择网卡 -> Start
+>   ```
+> - **过滤数据包**：使用显示过滤器过滤数据包。
+>   ```
+>   Wireshark -> Display Filter
+>   ```
+> - **分析数据包**：查看数据包的详细信息。
+>   ```
+>   Wireshark -> Packet List Pane -> 选择数据包 -> Packet Details Pane
+>   ```
+> - **保存抓包结果**：保存捕获的数据包。
+>   ```
+>   Wireshark -> File -> Save As
+>   ```
+> - **更多选项**：可以使用 `Wireshark -> Help -> Wireshark Filters`查看过滤表达式的规则。
 
 ## misc
 
@@ -176,13 +192,11 @@
 
 **LibcSearcher**:
 
-
-
->```
->git clone https://github.com/lieanu/LibcSearcher.git
->cd LibcSearcher
->python setup.py develop
->```
+> ```
+> git clone https://github.com/lieanu/LibcSearcher.git
+> cd LibcSearcher
+> python setup.py develop
+> ```
 
 ```python
 from LibcSearcher import *
@@ -249,13 +263,11 @@ int read_name()
 这里直接给出思路
 
 - 栈溢出buf到 `read_name` 的 ret_addr，并使其认证失败输出buf，获取基地址
-- 第二次栈溢出利用rop(这是一个表，对于出现的函数，我们可以获取其运行时`plt`，进而获取`got`，泄露`libc`即可)
+- 第二次栈溢出利用rop(这是一个表，对于出现的函数，我们可以获取其运行时 `plt`，进而获取 `got`，泄露 `libc`即可)
   - libc 用 `LibcSearcher`
-- 返回到`read_name`后，直接`pop`,`str_bin_sh`,`system`即可
+- 返回到 `read_name`后，直接 `pop`,`str_bin_sh`,`system`即可
 
 下面直接试一下exp(from [pygg]([2024-ZJUCTF-Pwn | 晚栀wingee~](http://47.96.29.144/2024/10/28/2024-ZJUCTF-PWN/)))
-
-
 
 这里有一个很基础的思想，ORW，文件名不知道怎么办，如何打开写入，都是很重要的事情
 

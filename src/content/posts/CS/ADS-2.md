@@ -355,3 +355,49 @@ $$
 :::
 
 实际上就是Form3的重述
+# Dynamic Programming
+
+## Principle
+
+处理最优化问题，要求具有最优子结构。
+
+## 例子
+
+
+
+### Ordering Matrix Multiplications【Interval DP】
+
+> 题即其意
+
+$$
+m_{i,j}=\min_{i\leqslant l<j}\{m_{i,l}+m_{l+1,j}+r_{i-1}r_lr_j\}
+$$
+
+这里关于连乘方案，实际上就是画括号(卡特兰数)
+$$
+b_n=\sum _{i<n}b_ib_{n-i-1}
+$$
+$b_n=\frac{\binom{2n}{n}}{n+1}=\mathcal O(\frac{4^n}{n^{\frac{3}{2}}})$
+
+### Optimal Binary Search Tree【Interval DP】
+
+> 给定一些words 有$w_1<w_2<\cdots w_n$，每个有一个搜索概率$p_i$,你需要安排一个BST满足$w$约束，最小化
+> $$
+> T(n)=\sum_{i=1}^n p_i(1+d_i)
+> $$
+
+假设$\mathcal T_{i,j}$表示$[i,j]$内的最优BST
+
+$c_{i,j}$表示函数，$r_{i,j}$表示根，$w_{i,j}$是$\sum _{k=i}^j p_k$
+$$
+c_{i,j}=c_{i,k-1}+c_{k+1,j}+w_{i,j}
+$$
+这里相当于是考虑从哪里分开
+
+### Floyd
+
+设$f_k(i,j)$表示$i\to [l\leqslant k]\to j$的最短路
+
+$f_{k}(i,j)=\min \{f_{k-1}(i,j),f_{k-1}(i,k)+f_{k-1}(k,j)\}$
+
+注意到我们不需要存$k$

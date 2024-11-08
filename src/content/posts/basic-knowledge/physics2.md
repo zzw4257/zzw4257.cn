@@ -2075,3 +2075,42 @@ a specific field is ABS: work as B tensor,detect shaft rotation speed and beam o
 $$
 V_{AA'} = \frac{1}{nq}\cdot \frac{iB}{d}
 $$
+
+## Chap 34 The Faraday's Law of Induction
+
+### General Review
+
+- Electrostatics
+  - motion of $q$ in $\vec E$
+  - $\displaystyle \int \vec E\cdot d\vec A =\frac{\sum q_{cls}}{\varepsilon}$
+- Magnetostatics
+  - motion of $q$ in $\vec B$
+- Electrodynamics
+  - $\frac{d\vec B}{d t}\neq 0\Rightarrow \vec E$
+  - AC circuit,inductors,transformers
+  - $\frac{d\vec E}{d t}\neq 0\Rightarrow \vec B$
+
+### 34-1/2 Basic Phenomena & Faraday's Law of Induction
+
+$$
+\frac{d\Phi_B}{dt}\to i_{ind}\\
+\varepsilon =-\frac{d\Phi_B}{dt}
+$$
+
+
+
+just treat $\varepsilon$'s sign with right hand rule
+
+### 34-3 Lenz's Law
+
+The induced current will appear in such a direction that it **opposes the change in flux** that produced it.
+
+![image-20241106104234350](/pic/phy2/laminated.png)
+
+laminated materials can reduce **eddy currents**
+
+:::note[app : magnetic Induction]
+
+
+
+:::

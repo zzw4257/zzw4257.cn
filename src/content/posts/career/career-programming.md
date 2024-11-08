@@ -1,6 +1,6 @@
 ---
 title: 【职规Online】职规课做的尴尬视频
-published: 2024-11-8
+published: 2024-11-08
 tags: [video,career]
 category: Unconcerned
 draft: false

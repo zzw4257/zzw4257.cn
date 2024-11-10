@@ -6,6 +6,7 @@ tags: [note,ads,CS]
 category: CS
 draft: true
 ---
+[浙江大学《高级数据结构与算法分析》课程笔记 | 那颗名为现在的星](https://zhang-each.github.io/2021/05/03/ads/)
 
 ## DS实现过关
 
@@ -87,11 +88,9 @@ void Rot(int x){
 */
 ```
 
-
-
 ### R-B tree
 
-- 红黑树合法的一个重要必要条件：合法红黑树的红点的两个子节点一定都是/不是`NIL`节点
+- 红黑树合法的一个重要必要条件：合法红黑树的红点的两个子节点一定都是/不是 `NIL`节点
 
 #### Insert
 
@@ -135,8 +134,6 @@ stateDiagram
     unc叛变 --> finish: C
 ```
 
-
-
 ```cpp
 
 ```
@@ -144,6 +141,8 @@ stateDiagram
 #### Delete
 
 这里我有一副我自己看起来比较舒服的图
+
+考完之后再整理吧
 
 ```mermaid
 stateDiagram
@@ -156,11 +155,8 @@ stateDiagram
     unc叛变 --> finish: C
 ```
 
-
-
-
-
 ```cpp
+
 ```
 
 ### B+ tree
@@ -173,12 +169,12 @@ stateDiagram
 
 - 非叶子节点至多M-1个分支其中第$i$个key表示$i+1$中最小的值，
 - 根为2~M个分支
-- 非根内部节点有$[\lceil\frac{M}{2}\rceil,M]$​​个孩子
-- 所有的叶子节点都在一层，然后内部有$[\lceil\frac{M}{2}\rceil,M]$​​个data，假设叶子是根，则全部在里面不受约束
+- 非根内部节点有$[\lceil\frac{M}{2}\rceil,M]$个孩子
+- 所有的叶子节点都在一层，然后内部有$[\lceil\frac{M}{2}\rceil,M]$个data，假设叶子是根，则全部在里面不受约束
 
 换一句话在$M$叉树上的每个非叶子的key列实际上可以被拆成若干个左闭右开区间的并，所谓的闭来自与对应树的最小值
 
-下面是一个实际上泛用于任意$M$​叉B+树的3叉B+tree演示：
+下面是一个实际上泛用于任意$M$叉B+树的3叉B+tree演示：
 
 这个理清楚逻辑就很好写
 
@@ -194,7 +190,7 @@ struct Node{
         memcpy(v,V+vl,sizeof(*V)*nv);
         memcpy(c,C+cl,sizeof(*C)*nc);
         for(int i=0;i<nc;++i)c[i]->fa=this;
-        // !!! remember that you need to use c instead of C,and remember the bias.    
+        // !!! remember that you need to use c instead of C,and remember the bias.  
     }
     void Print(void){putchar('[');for(int i=0;i<nv;++i)printf((!i)?"%d":",%d",this->v[i]);putchar(']');}
 };
@@ -215,10 +211,10 @@ void Split(BT x){
     else {
         l=new Node(prt,v,c,0,1,0,2),r=new Node(prt,v,c,2,nv,2,nc);
     }
-    prt->v[prt->nv++]=v[lf?2:1];    
+    prt->v[prt->nv++]=v[lf?2:1];  
     if(prt->nc>0){for(int i=0;i<prt->nc;++i)if(prt->c[i]==x){prt->c[i]=l;break;}}
     else prt->c[prt->nc++]=l;
-    
+  
     prt->c[prt->nc++]=r;
     sort(prt->v,prt->v+prt->nv);
     sort(prt->c,prt->c+prt->nc,[](Node*a,Node*b){return a->v[0]<b->v[0];});
@@ -273,21 +269,77 @@ int main(void){
 
 | TreeType/Operation | find-min | delete-min | decrease-key | insert | merge | build |
 | :----------------: | :------: | :--------: | :----------: | :----: | :---: | :---: |
-|                    |          |            |              |        |       |       |
-|                    |          |            |              |        |       |       |
-|                    |          |            |              |        |       |       |
-|                    |          |            |              |        |       |       |
+|                    |          |            |              |        |      |      |
+|                    |          |            |              |        |      |      |
+|                    |          |            |              |        |      |      |
+|                    |          |            |              |        |      |      |
 
 ### 均摊分析专题
 
+最重要的还是下面这个
 
+:::important[主定理Form3]
 
-## 刷题
+当递推关系满足：
 
-### 
+$$
+T(N)=aT(\frac{N}{b})+\Theta(N^k\log^{p}N)\text{ Where }a\geq 1,b>1,p\geq 0
+$$
 
-## 错题总结
+其复杂度有结论：
 
+$$
+T(N)=
+\begin{cases}
+O(N^{\log_{⁡b}a}),a>b^k\\
+O(N^k\log⁡^{p+1}N),a=b^k\\
+O(N^k\log^{p}N),a<b^k
+\end{cases}
+$$
 
+:::
+
+然后其余方法是最本质的迭代法，你不断往下面迭代到底就行
+
+下面给一些**非主定理**例子
+
+:::important
+
+- $T(n)=2T(\sqrt n)+\log  n  || T(n)=T(n^{\frac{1}{3}})+T(n^{\frac{2}{3}})+\log n~\Rightarrow  ~T(n)=\mathcal  O(\log  n\log\log n)$
+- 
+
+:::
+
+## 期中历年卷
+
+### 17年卷
+
+<iframe
+  src="/pdfjs-4.6.82-dist/web/viewer.html?file=/file/17年ads试卷.pdf"
+  width="100%"
+  height="800px"
+></iframe>
+
+### 18年卷
+
+<iframe
+  src="/pdfjs-4.6.82-dist/web/viewer.html?file=/file/18年ads试卷.pdf"
+  width="100%"
+  height="800px"
+></iframe>
+
+### 20年期中卷
+
+### 21年期中卷
+
+### 24年陈昊卷
+
+这个两个版本基本一样的所以没差
+
+懒得把文件传上来了
+
+### 【考试】24年bjj卷
+
+## 期中错题总结(HW1——HW3)
 
 包含刷的题和原来的作业错题

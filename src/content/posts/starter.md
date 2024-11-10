@@ -7,11 +7,83 @@ tags: [note,links]
 category: Unconcerned
 draft: false
 ---
----
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome+to+zzw4257's+homepage!;Have+fun+with+your+college!;Just+have+a+quick+look!&font=Fira%20Code&center=true&width=760&height=100&duration=4000&pause=1000" alt="Example Usage - README Typing SVG">
+  <a href="https://github.com/sponsors/zzw4257"><img alt="Sponsor with Github" title="Sponsor with Github" src="https://img.shields.io/badge/-Sponsor-ea4aaa?style=for-the-badge&logo=github&logoColor=white"/></a>
+</p>
 
-你好哇，我是zzw4257, 在某三本读书, 往深处逛前先来了解下这个网站吧~本网站主要存放一些综合性的内容，一些学术分享和尝试性记录，课程笔记放在 `博客`栏目，依托notion储存的板块资源放在 `notion`部分，同时你也可以访问我的老博客和github库。希望你能在我的博客
+<div class="flink-list-item">
+  <div class="flink-item-icon">
+    <img alt="Alt text" src="/pic/link/bowling.jpg">
+  </div>
+  <a href="https://hzeroyuke.github.io/my_blog/" title="书怀的blog" target="_blank">
+    <div class="flink-item-name">Zephyr</div>
+    <div class="flink-item-desc">🐱</div>
+  </a>
+</div>
 
-## 友链
+<style>
+/* Copy From Minjoker */
+
+/* modified from
+   source: https://github.com/TonyCrane/note/blob/master/docs/css/flink.css */
+
+/* friends link */
+
+.flink-list {
+  overflow: auto;
+  padding: 10px 10px 0;
+  text-align: center;
+}
+[data-md-color-scheme="default"] .flink-list a {
+  color:  var(--md-default-fg-color);
+}
+[data-md-color-scheme="slate"] .flink-list a {
+  color:  var(--md-default-fg-color);
+}
+.flink-list-item {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 15px 7px;
+  width: calc(100% / 2 - 15px);
+  height: 90px;
+  border-radius: 8px;
+  line-height: 17px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: 0.25s;
+}
+.flink-item-icon {
+  float: left;
+  overflow: hidden;
+  margin: 15px 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 35px;
+}
+.flink-item-name {
+  padding: 19px 10px 0 0;
+  height: 40px;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.flink-item-desc {
+  padding: 13px 10px 16px 0;
+  height: 50px;
+  font-size: 0.95em;
+}
+.flink-list-item:hover {
+  background-color:  rgba(128, 128, 128, 0.1);
+}
+.flink-list-item {
+  width: calc(50% - 15px) !important;
+}
+
+</style>
+
+<br><br>
+<br><br>
 
 :::warning
 

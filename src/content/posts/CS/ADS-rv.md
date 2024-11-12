@@ -96,7 +96,7 @@ void Rot(int x){
 
 正常find默认填红
 
-这里我们考虑黑高被破坏的情况
+包含刷的题和原来的作业错题
 
 ![image-20241109151653982](/Users/zzw4257/Documents/repo/zzw4257.cn/src/content/posts/CS/ADS-rv.assets/image-20241109151653982.png)
 
@@ -336,7 +336,7 @@ $$
 
 这个两个版本基本一样的所以没差
 
-懒得把文件传上来了
+最后辨析一下两个题
 
 ### 【考试】24年bjj卷
 

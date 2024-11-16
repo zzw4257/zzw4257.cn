@@ -713,4 +713,163 @@ Lorentz force results in a motional emf
 $$
 \vec f =-e(\vec v\times \vec B)
 $$
- 
+Non electrostatic force 
+$$
+\vec K=\frac{\vec f}{-e}=\vec v\times \vec B
+$$
+Motional emf 
+$$
+\varepsilon =\int_{-}^+ \vec K \bullet d\vec l=\int_{C}^D (\vec  v\times \vec  B)\cdot d\vec l
+$$
+Lorentz force can't do work to electron
+
+:::note[P781  34-4]
+
+![image-20241116093051415](/pic/phy2/FL-eg1.png)
+
+Sol1:
+$$
+d\varepsilon =(\vec v\times \vec B)\cdot d\vec r =-Bvdr\\
+\varepsilon =-\frac{1}{2}B\omega R^2 
+$$
+Sol2:
+$$
+\varepsilon =\frac{-d\Phi_B}{dt}=-\frac{1}{2}\frac{dB(\frac{1}{2}R^2\theta)}{dt}
+$$
+direction +o -a
+
+:::
+
+:::note[App:Generators and Motors ]
+
+![image-20241116093500033](/pic/phy2/image-20241116093500033.png)
+
+![image-20241116093524271](/pic/image-20241116093524271.png)
+$$
+\Phi_B=BA\cos \omega t\\\varepsilon =BA\omega \sin \omega t
+$$
+:::
+
+#### Induced emf
+
+- Vortex electric field
+
+a increasing magnetic field pass through the loop will generate a ringing electric field.
+$$
+\varepsilon =\oint \vec E\cdot d\vec l
+$$
+![image-20241116094304723](/pic/image-20241116094304723.png)
+$$
+\varepsilon =-\frac{d\Phi_B}{dt}=-Ak
+$$
+
+$$
+\begin{aligned}&W=\varepsilon q_{0}=q_{0}E_{induced}\cdot2\pi r\\&\varepsilon=E_{induced}\cdot2\pi r=\oint\vec{E}_{induced}\cdot d\vec{l}\end{aligned}
+$$
+
+$$
+\varepsilon=-\frac{d\Phi_{B}}{dt}\\\therefore\quad\oint\vec{E}_{induced}\cdot d\vec{l}=-\frac{d\Phi_{B}}{dt}
+$$
+
+it just implide that
+
+$$
+\nabla \times \vec E=-\frac{\partial \vec B}{\partial t}
+$$
+
+$$
+\begin{aligned}&\vec{E}=\vec{E}_{sta}+\vec{E}_{ind}\\&\therefore\quad\oint\vec{E}\cdot d\vec{l}=\oint(\vec{E}_{sta}+\vec{E}_{ind})\cdot d\vec{l}=0+(-\frac{d\Phi_B}{dt})=-\frac{d\Phi_B}{dt}\end{aligned}
+$$
+
+Es is set up by charges,     Ein is set up by changing magnetic field.    Both kinds of electric field exert on charges.
+
+:::note[The betatron]
+
+![image-20241116095020370](/pic/image-20241116095020370.png)
+
+Betatron produces a pulse rather than a continuous beam.
+
+:::
+
+### 34-5. Induction & Relative Motion
+
+![image-20241116095155600](/pic/image-20241116095155600.png)
+$$
+\begin{aligned}&\text{Motional emf:}\\&\vec{V}=\vec{\nu}+\vec{\nu}_{a},\quad\vec{F}_{b}=\vec{N}+\vec{F}_{i}\\&\mathrm{d}W_{N}=N(\nu\mathrm{d}t)\\&=F_{B}\sin\theta(\nu\mathrm{d}t)\\&=(qVB)(\nu_{d}/V)(\nu\mathrm{d}t)\\&=(qB\nu_{d})(\nu\mathrm{d}t)\\&=(qB\nu)(\nu_{d}\mathrm{d}t)\\&=qB\nu dl\\&W_N=\int qBvdl=qBvD\\&\varepsilon = W_N/q=BDv \\&dW_i=-F_idl=-qvBdl\\&W_i=-qvBD=-W_N\end{aligned}
+$$
+
+$$
+\varepsilon =\int (\vec E'+\vec v\times \vec B)\cdot d\vec l
+$$
+
+![image-20241116095538359](/pic/image-20241116095538359.png)
+
+# Chapter 35(36) Inductance and    Magnetic properties of materials
+
+## 35-1 Inductance
+
+### Mutual Inductance
+
+i1 change   s2 induced emf $\varepsilon _2$
+
+i2 change   s1 induced emf $\varepsilon _1$
+$$
+M_{12}=\frac{\Psi_{12}}{i_{1}}=\frac{N_{2}\Phi_{12}}{i_{1}};\quad\varepsilon_{2}=-\frac{d\Psi_{12}}{dt}=-M_{12} \frac{di_{1}}{dt},\quad(i_{1} \mathrm{change})\\M_{21}=\frac{\Psi_{21}}{i_{2}}=\frac{N_{1}\Phi_{21}}{i_{2}};\quad\varepsilon_{1}=-\frac{d\Psi_{21}}{dt}=-M_{21} \frac{di_{2}}{dt},\quad(i_{2} \mathrm{change})
+$$
+$M_{12},M_{21}$ are called inductance constant (Unit: Henry)
+
+![image-20241116095932154](/pic/image-20241116095932154.png)
+$$
+\begin{aligned}
+&B=\mu_{0}ni, B_{1}=\mu_{0} \frac{N_{1}}{l}i_{1} \\
+&\Psi_{_{12}}=N_{_2}B_{_1}A=\mu_{_0} \frac{N_{_1}N_{_2}A}{l}i_{_1}&& \varepsilon_{2}=-M\frac{di_{1}}{dt} \\
+&M_{12}=\frac{\Psi_{_{12}}}{i_{_1}}=\mu_{_0}\frac{N_{_1}N_{_2}A}{l}&& =-25\times10^{-6}\times10V \\
+&=4\pi\cdot10^{-7}\frac{1000\times20\times10^{-3}}{1}&& |=-250 \mu V \\
+&=25\times10^{-6}H=25 \mu H \\
+\end{aligned}
+$$
+:::note[App:Mutual Inductance]
+
+- Transformers
+- Airport Metal Detectors
+- Pacemaker
+
+:::
+
+### Self-Inductance
+
+![image-20241116100138609](/pic/image-20241116100138609.png)
+$$
+\begin{aligned}&\psi=NBA=Li\\&\varepsilon_{L}=-\frac{d\psi}{dt}=-L\frac{di}{dt}\\&V_{b}-V_{a}=-L\frac{di}{dt}\end{aligned}
+$$
+L —— self-inductance
+
+![image-20241116100749029](/pic/image-20241116100749029.png)
+$$
+L=\frac{\displaystyle \iint  \vec B \cdot d\vec A }{i}
+$$
+
+$$
+\varepsilon =-\frac{d\Phi_B }{dt}=-L\frac{di}{dt}
+$$
+
+how to calculate self-inductance?
+
+$i,\vec B,N\to L$
+$$
+L=\frac{N\Phi_B}{i}\to\varepsilon _L =-\frac{d(N\Phi_B)}{dt}
+$$
+![image-20241116101221305](/pic/image-20241116101221305.png)
+
+:::note[Toroid of rectangular]
+
+![image-20241116101304824](/pic/image-20241116101304824.png)
+$$
+\begin{gathered}
+\oint\vec{B}\bullet d\vec{l}=\mu_0N\boldsymbol{i} \\
+B=\frac{\mu_0\boldsymbol{i}N}{2\pi r} \\
+\boldsymbol{\Phi}_B=\int\int\vec{B}\bullet d\vec{A}=\int_a^b\frac{\mu_0\boldsymbol{i}N}{2\pi r}\boldsymbol{h}\mathrm{d}r \\
+=\frac{\mu_0iNh}{2\pi}\int_a^b\frac{\mathrm{d}r}r=\frac{\mu_0iNh}{2\pi}\ln\frac ba\quad\therefore L=\frac{N\boldsymbol{\Phi}_B}i=\frac{\mu_0N^2\boldsymbol{h}}{2\pi}\ln\frac ba 
+\end{gathered}
+$$
+:::

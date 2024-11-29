@@ -401,3 +401,265 @@ $$
 $f_{k}(i,j)=\min \{f_{k-1}(i,j),f_{k-1}(i,k)+f_{k-1}(k,j)\}$
 
 注意到我们不需要存$k$
+
+# Greedy Algorithm
+
+##  Greedy Principle
+
+整体上
+
+## Huffman tree/code
+
+# Np Completness
+
+这是一个
+
+![image-20241126134330424](/pic/ads/NPlink.png)
+
+## Concept
+
+- 图灵机
+
+  - > 图灵机由一个**无限长的纸带**和一个**读写头**组成。纸带被划分为一个个**格子**，每个格子上有一个**符号**，读写头可以在纸带上移动，读写头可以读取当前格子上的符号，也可以改变当前格子上的符号。图灵机的**状态**是一个有限集合，每个状态都有一个**转移函数**，转移函数的输入是当前状态和当前格子上的符号，输出是下一个状态、下一个格子上的符号和读写头的移动方向。
+
+  - 确定型图灵机每次都能执行一个指令，并且根据当前指令跳转到下一个唯一的指令，非确定型图灵机可以从有限集中随意选择下一步，如果当前得到了一个答案，那么它一直都会选择正确的那一步。
+
+- 多项式归约$\leq_P$ : $A\leq_P B \Leftrightarrow \exist f$，$f(A)=B,f^{-1}(B)=A$
+
+- P（Polynomial Time）
+
+- NP（Nondeterministic Polynomial Time）
+
+  - 确定性图灵奖多项式验证
+  - 不确定多项式多项式解决
+
+- NPC
+
+  - 是NP
+
+  - $$
+    B\in NP,\forall A\in NP,A\leq _P B\Rightarrow B\in NPC
+    $$
+    
+  - $$
+    B\in NP,A\in NPC,A\leq _P B\to B \in NPC
+    $$
+
+- NPH(NP Hard)
+
+  - $$
+    \forall A\in NP,A\leq_P B\Rightarrow B\in NPH
+    $$
+
+  - $NPC=NP\cap$​
+
+  - NP-Hard 可以是NP，也可以不是NP
+
+  ![img](https://brucejqs.github.io/MyNotebook/assets/Pasted%20image%2020241119105739.png)
+
+- Undecidable 不可判定
+
+## NPC
+
+第一个是Circuit-SAT->3-SAT
+
+3SAT约束了布尔表达式的范式
+$$
+(x1\vee x2\vee x3)\wedge (x_4)
+$$
+
+
+##  NPH
+
+
+
+
+
+## 经典问题
+
+
+
+- Vertex Cover:选一个最小子集，覆盖所有边
+
+- SAT:
+  - 2-SAT是P的
+  - 3-SAT (and , or , not)运算符 
+  -  
+
+![img](https://brucejqs.github.io/MyNotebook/assets/Pasted%20image%2020241119163852.png)
+
+# Approximation
+
+## Approximation Ratio & Scheme
+
+$\rho =\max \left\{\frac{f_n(x)}{f_n(x^*)},\frac{f_n(x^*)}{f_n(x)}\right\}$
+
+则称算法为 $\rho$-approx 算法
+
+近似范式是对一个优化问题，一族相同模式的算法
+
+满足$\rho\leqslant 1+\varepsilon,\varepsilon >0$
+
+复杂度可以记为
+
+- $$
+  \mathcal O(n^{f(\varepsilon^{-1} )})
+  $$
+
+  成为多项式时间近似范式，**Polynomial-time Approximation Scheme, PTAS）**
+
+- $$
+  \mathcal O(n^{a}\varepsilon ^b)
+  $$
+
+​	称为完全多项式时间近似范式**（Fully Polynomial-Time Approximation Scheme, FPTAS）**
+
+在PTAS中,$\varepsilon $的变化是难以接受的
+
+# Examples
+
+## Bin Packing
+
+> n个$a_i\in(0,1]$，求最小分组方案，每个组和$\leqslant 1$
+
+变种 $k$能否装$n$个$a_i$是一个NPC
+
+## Online Algorithm
+
+### NF Next Fit
+
+NF策略总是选择最后一个组加
+$$
+\rho=\sup \frac{AIG(I)}{OPT(I)}
+$$
+
+$$
+\mathrm{OPT}\geqslant 总和\geqslant \lceil NF/2\rceil
+$$
+
+这里我们当然可以详细写，没必要
+
+这里有一种构造让其取到2
+
+如何让近似比更小？
+
+### First/Best Fit
+
+总是找第一个/最紧的bin
+
+有1.7的界
+
+[最适合的垃圾箱包装 - 维基百科 --- Best-fit bin packing - Wikipedia](https://en.wikipedia.org/wiki/Best-fit_bin_packing)
+
+### All in all
+
+> 具体来说，有以下定理：对于本题的所有近似算法，得到的近似解桶数至少是最优解桶数 $\frac{5}{3}$​ 倍。因此，我们需要采用**离线算法**来提升近似的准确度。
+
+对手法
+
+:::note[证明演示]
+
+我们作为对手和对面达成公式，**你不能**
+
+我们首先构造$34$个
+
+则此时你不能开
+
+因为你开了就产生了$\rho \geqslant 2$
+
+然后接着给你两个17
+
+- 一个，给三个26
+- 两个，给两个34
+
+:::
+
+## Offline
+
+### FFD
+
+降序然后BF,
+
+$\leqslant \frac{11}{9}M+\frac{6}{9}$
+
+# Knapsack
+
+## Greedy PTAS
+
+- 性价比
+- 买最大价值
+
+结合起来
+
+$AIG\geqslant \max\{x,y\},OPT=x+y$
+
+我们可以设计
+
+$y\leqslant \varepsilon OPT$
+
+这里你可以取$1/\varepsilon $个东西，枚举其存在情况
+
+### DP FPTAS
+
+很容易写一个
+$$
+\mathcal O(n^2 p_{max})
+$$
+但是注意，我们是关于
+$$
+n,\log p_{max}
+$$
+的多项式
+
+这里有一种Round about的技术
+$$
+p'_i\to \lfloor\frac{p_i}{\alpha }\rfloor\\\alpha =\frac{\varepsilon p_{max}}{n}\to p'_i\leqslant \frac{n}{\varepsilon} 
+$$
+
+$$
+(1+\epsilon )P_{alg}\geqslant P
+$$
+
+# K-center
+
+> 给一堆点，找K个，求最小K圆覆盖半径
+
+注意这里距离是基于度量空间的
+
+设$C=\{c_1,c_2,\cdots,c_k\}$为$k$个center,$S=\{s_1,\cdots,s_n\}$为$n$个site
+
+$\text{minimize~} r(C) =\max _{s_i\in S}\{\min _{c_i\leqslant C} \{\text{dis}(s_i,c_i) \}\}$
+
+### Naive Greedy
+
+每次选能让下降最多的
+
+### Smarter
+
+说这个近似比是2
+
+### Themory:不可近似性
+
+K-center问题有没有$\rho<2$等价于$P=NP$
+
+本质是找一个NPC,用一个$\rho<2$的方法归约他
+
+具体而言是支配集
+
+选定一个最小的子集，使得剩余点和这个子集中至少一个点相连
+
+这是一个NPC问题
+
+假设我们存在一个$\rho <2$​的方法$AlG$在$G'$工作
+
+我们对于$G(V,E)$
+
+构造$\mathrm{dis}(v,u)=\begin{cases}0&u=v\\1&u\to v\\ 2&u\not \to v \end{cases}$
+$$
+r(C)\in\{1,2\}
+$$
+r(C)=1已经找到。$r(C)>1\to r(C^*)>1$说明确实没有
+
+这里具体的定义给了很多约束
+
+这里可以换距离定义

@@ -624,7 +624,7 @@ $$
 
 we can trace back to the distribution reflected by n-dipoles.
 
-:::[egs for potential calculation]
+:::note[egs for potential calculation]
 
 for a charged sphere shell
 
@@ -1265,14 +1265,15 @@ $$
 
 ![image-20241020225112215](/pic/phy2/Ohm-Law)
 
-Conductance $G=\frac{1}{R}=\frac{\mathrm d I}{\mathrm d V}(Unit:S)$​
+Conductance $G=\frac{1}{R}=\frac{\mathrm d I}{\mathrm d V}(Unit:S)$
 differential resistance $R=\frac{dV}{dI}$ (in usual context $R=\frac{V}{I}$ instead)
 
 **Resistivity, & conductivity** :
 
-we call $\rho $ as resistivity and $\sigma =\frac{1}{\rho}$ as conductivity , $R=\rho \frac{L}{A}$​
+we call $\rho $ as resistivity and $\sigma =\frac{1}{\rho}$ as conductivity , $R=\rho \frac{L}{A}$
 
 ![image-20241104090458840](/pic/phy2/usual-resistivity.png)
+
 $$
 R=\int \rho \frac{\mathrm d l}{A}, \sigma =\frac{1}{\rho}
 $$
@@ -1308,11 +1309,13 @@ $$
 it;s the integral form of Ohm's law
 
 and when treating it as differential form
+
 $$
 \Delta i =\frac{\Delta V}{R}\\
 j\Delta A =\frac{E\Delta l}{\rho \frac{\Delta l}{\Delta A}}\\
 j=\frac{E}{\rho}=\sigma E
 $$
+
 holds for every node
 
 ### Electric power and Joule Law
@@ -1335,12 +1338,14 @@ $1~degree =1kW.h=3.6MJ$
 ![image-20241021092841895](/pic/phy2/Ohm_micro.png)
 
 :::note[drift speed of electric charge]
+
 $$
 j=2.4A/mm^2\\
 b=8.4\times 10^{28}m^{-3}\\
 j=\frac{\Delta i}{\Delta A}=neu\\
 u=\frac{j}{ne}=1.8\times 10^{-4}m/s<<v_t\approx 10^5m/s
 $$
+
 :::
 
 ## 31-2 Source and Electromotive Force(emf)
@@ -1350,10 +1355,13 @@ $$
 $$
 
 only E and no current!
+
 $$
 \vec j =\sigma(\vec K+\vec E)
 $$
+
 for emf
+
 $$
 \varepsilon =\oint \vec K dl\approx \int _{-}^+ \vec K \cdot d\vec l
 $$
@@ -1361,11 +1369,13 @@ $$
 ### Terminal Voltage of a Seat
 
 Discharge with $R$,and charge with $\varepsilon '$,
+
 $$
 \Delta V=\int _{+}^{-}\vec E\cdot d\vec l\\
 \text{in~a~seat}:\vec E=-\vec K+\frac{\vec j}{\sigma}\\
 \Delta V=\int_{-}^+ \vec K\cdot d\vec l-\int_{-}^+ \rho j dl \cos \theta\\=\varepsilon \pm (-jA\int_{-}^+ \frac{\rho d l}{A})=\varepsilon\pm ir
 $$
+
 the terminal voltage between ends
 
 <img src="/pic/phy2/image-20241104092151726.png" alt="image-20241104092151726" style="zoom:33%;" />
@@ -1377,7 +1387,6 @@ the terminal voltage between ends
   - $$
     \Delta V_{AB}=\varepsilon -ir
     $$
-
 - Charge
 
   - $$
@@ -1396,7 +1405,8 @@ $$
 
 $\dot P_{out}=0\Rightarrow \varepsilon ^2 \frac{r-R}{(R+r)^2}=0,R^*=r$
 
-![image-20241104092654739]( /pic/phy2/image-20241104092654739.png)
+![image-20241104092654739](/pic/phy2/image-20241104092654739.png)
+
 $$
 j=\sigma \vec E,\vec S=\vec E\times \vec H
 $$
@@ -1412,18 +1422,19 @@ Resistors connected in Series and Parallel
 
 - Galvanometer
 
-  $I_g=50\mu A,R_g =1k\Omega$​
+  $I_g=50\mu A,R_g =1k\Omega$
 
 ![image-20241104093208377](/pic/phy2/image-20241104093208377.png)
+
 $$
 I_g =\frac{U}{R_g+R_m}\
 R_m=\frac{U-I_gR_g}{I_g}=\frac{U}{I_g}-R_g =199k\Omega
 $$
+
 ![image-20241104093437907](/pic/phy2/image-20241104093437907.png)
+
 $$
 I_gR_g =(I-I_g)R_s\\R_s=\frac{I_g}{I-I_g}R_g
 $$
 
-
 :::
-

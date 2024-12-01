@@ -1,0 +1,9 @@
+| **缩写** | **中文名称**     | **英文名称**                 | **职责描述**                                                 |
+| -------- | ---------------- | ---------------------------- | ------------------------------------------------------------ |
+| **ISP**  | 互联网服务提供商 | Internet Service Provider    | Provides Internet access and related services to end-users or businesses. |
+| **ICP**  | 互联网内容提供商 | Internet Content Provider    | Provides online content like news, videos, or e-commerce platforms. |
+| **IDP**  | 互联网数据提供商 | Internet Data Provider       | Specializes in data and analytics services.                  |
+| **CDN**  | 内容分发网络     | Content Delivery Network     | A distributed network that delivers content efficiently.     |
+| **IXP**  | 互联网交换中心   | Internet Exchange Point      | A hub where ISPs exchange traffic to improve efficiency and reduce latency. |
+| **ASP**  | 应用服务提供商   | Application Service Provider | Delivers software applications over the Internet as a service. |
+

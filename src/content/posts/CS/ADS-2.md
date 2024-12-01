@@ -582,7 +582,7 @@ $$
 
 $\leqslant \frac{11}{9}M+\frac{6}{9}$
 
-# Knapsack
+## Knapsack
 
 ## Greedy PTAS
 
@@ -620,7 +620,7 @@ $$
 (1+\epsilon )P_{alg}\geqslant P
 $$
 
-# K-center
+## K-center
 
 > 给一堆点，找K个，求最小K圆覆盖半径
 
@@ -663,3 +663,77 @@ r(C)=1已经找到。$r(C)>1\to r(C^*)>1$说明确实没有
 这里具体的定义给了很多约束
 
 这里可以换距离定义
+
+# Local Search
+
+## 整体刻画
+
+- $\mathcal L(S)$表示$S$的价值，我们需要$\operatorname{argmax}\mathcal L(S)$
+- $S\to S'$​模式，每次对于一个状态找**符合要求**的邻集
+- 👀 $\mathcal {FS}\to \bullet,\mathcal {FS}\xrightarrow{\text{small~}} $
+
+## GD - Climbing Algorithm
+
+这里实际上是假的梯度下降，每次我们选择邻集中的最值走
+$$
+S'\to \operatorname{argmax} N(S)
+$$
+:::note[Vertex Cover Problem]
+
+这里我们构造$\mathcal L (S)\to |S|$
+
+:::
+
+容易发现类似菊花图，线，完全二分图这种，假设你有一步没有删除对，则一定会导致不对
+
+### The Metropolis Algorithm
+
+我们随机选取邻集，假设更优就接受，假设不优
+
+依赖$e^{-\frac{\Delta \mathcal L }{kT}}$来接受
+
+:::important
+
+Simulated Annealing 
+
+我们构造温度衰减
+
+:::
+
+由于这里我们可能接受**坏**的结果，因此我们
+
+### Hopfield Neural Networks
+
+> 给图定黑白色，找有无方案使得 $\forall u\in S,\displaystyle \sum _{(u,v)\in E}w_es_us_v\leqslant 0$
+
+- State-flipping Algorithm:
+  - $S\to S'$,反转一个
+
+可以证明$\mathcal T\leqslant \sum _{e}|w_e|$
+
+:::note[Proof]
+$$
+\Phi (S)=\sum _{e,s_u\neq s_v} |w_e|
+$$
+有
+$$
+\Phi(S')=\Phi(S)-\sum _{e_u\mathtt {~is~bad}}|w_e|+\sum _{e_u\mathtt {~is~good}}|w_e|\geqslant \Phi(S)
+$$
+有$0\leqslant \Phi(S)\leqslant W$
+
+:::
+
+目标变成最大$\Phi$
+
+直接做肯定不是多项式的
+
+### The **Maximum Cut** **Problem**
+
+> 给图定黑白色，最大化$\displaystyle \sum _{u\in A,v\in B}w_{uv}$
+
+本质上是上一题$w\geqslant 0$的特例，然后直接套用算法
+
+这里我们需要证明局部最优解有$2$的近似比
+
+设最优解为$w(A^*,B^*)$
+
